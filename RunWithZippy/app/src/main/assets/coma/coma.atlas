@@ -1,0 +1,308 @@
+
+coma.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+blevotina1
+  rotate: true
+  xy: 354, 22
+  size: 275, 444
+  orig: 275, 444
+  offset: 0, 0
+  index: -1
+face_mouth
+  rotate: false
+  xy: 800, 4
+  size: 99, 46
+  orig: 101, 48
+  offset: 1, 1
+  index: -1
+face_nose
+  rotate: false
+  xy: 957, 14
+  size: 50, 36
+  orig: 52, 38
+  offset: 1, 1
+  index: -1
+face_tongue
+  rotate: true
+  xy: 901, 13
+  size: 37, 54
+  orig: 37, 54
+  offset: 0, 0
+  index: -1
+fat_head
+  rotate: false
+  xy: 2, 299
+  size: 996, 721
+  orig: 998, 723
+  offset: 1, 1
+  index: -1
+hand
+  rotate: true
+  xy: 2, 2
+  size: 295, 350
+  orig: 295, 350
+  offset: 0, 0
+  index: -1
+knockout_effect
+  rotate: true
+  xy: 800, 52
+  size: 245, 193
+  orig: 245, 193
+  offset: 0, 0
+  index: -1
+
+coma2.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body_lying
+  rotate: false
+  xy: 2, 172
+  size: 984, 847
+  orig: 984, 847
+  offset: 0, 0
+  index: -1
+eye_closed
+  rotate: true
+  xy: 988, 921
+  size: 98, 34
+  orig: 98, 34
+  offset: 0, 0
+  index: -1
+eyes1
+  rotate: false
+  xy: 479, 20
+  size: 401, 46
+  orig: 403, 48
+  offset: 1, 1
+  index: -1
+face_mouth_normal
+  rotate: false
+  xy: 2, 2
+  size: 122, 35
+  orig: 122, 35
+  offset: 0, 0
+  index: -1
+fat_eyes2
+  rotate: false
+  xy: 479, 68
+  size: 364, 102
+  orig: 366, 104
+  offset: 1, 1
+  index: -1
+fat_hvost
+  rotate: false
+  xy: 2, 39
+  size: 475, 131
+  orig: 475, 131
+  offset: 0, 0
+  index: -1
+leg1
+  rotate: false
+  xy: 988, 821
+  size: 34, 98
+  orig: 34, 98
+  offset: 0, 0
+  index: -1
+leg2
+  rotate: true
+  xy: 882, 24
+  size: 146, 140
+  orig: 146, 140
+  offset: 0, 0
+  index: -1
+
+coma3.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ear
+  rotate: false
+  xy: 434, 21
+  size: 317, 256
+  orig: 317, 256
+  offset: 0, 0
+  index: -1
+face_cheek
+  rotate: true
+  xy: 894, 2
+  size: 94, 87
+  orig: 96, 89
+  offset: 1, 1
+  index: -1
+face_chin
+  rotate: false
+  xy: 753, 208
+  size: 224, 69
+  orig: 226, 71
+  offset: 1, 1
+  index: -1
+hand_v
+  rotate: false
+  xy: 894, 98
+  size: 117, 108
+  orig: 117, 108
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 279
+  size: 975, 732
+  orig: 977, 734
+  offset: 1, 1
+  index: -1
+hvost
+  rotate: false
+  xy: 2, 7
+  size: 430, 270
+  orig: 430, 270
+  offset: 0, 0
+  index: -1
+punch_effect
+  rotate: true
+  xy: 753, 14
+  size: 192, 139
+  orig: 192, 139
+  offset: 0, 0
+  index: -1
+
+coma4.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+face_eye_normal
+  rotate: true
+  xy: 411, 96
+  size: 79, 116
+  orig: 79, 116
+  offset: 0, 0
+  index: -1
+face_eye_shocked
+  rotate: false
+  xy: 529, 90
+  size: 85, 85
+  orig: 85, 85
+  offset: 0, 0
+  index: -1
+face_eye_x
+  rotate: true
+  xy: 944, 890
+  size: 115, 71
+  orig: 117, 73
+  offset: 1, 1
+  index: -1
+face_eyebrow
+  rotate: false
+  xy: 2, 2
+  size: 62, 58
+  orig: 64, 60
+  offset: 1, 1
+  index: -1
+face_eyes_knockout
+  rotate: false
+  xy: 2, 62
+  size: 134, 113
+  orig: 134, 113
+  offset: 0, 0
+  index: -1
+face_eyes_xx
+  rotate: false
+  xy: 293, 85
+  size: 116, 90
+  orig: 116, 90
+  offset: 0, 0
+  index: -1
+fat_drop
+  rotate: true
+  xy: 138, 82
+  size: 93, 153
+  orig: 95, 155
+  offset: 1, 1
+  index: -1
+fat_telo
+  rotate: false
+  xy: 2, 177
+  size: 940, 828
+  orig: 942, 830
+  offset: 1, 1
+  index: -1
+
+coma5.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+blevotina2
+  rotate: false
+  xy: 369, 740
+  size: 505, 249
+  orig: 505, 249
+  offset: 0, 0
+  index: -1
+ear_normal
+  rotate: true
+  xy: 2, 746
+  size: 243, 365
+  orig: 243, 365
+  offset: 0, 0
+  index: -1
+fat_hand1
+  rotate: true
+  xy: 312, 436
+  size: 302, 368
+  orig: 304, 370
+  offset: 1, 1
+  index: -1
+fat_hand2
+  rotate: false
+  xy: 682, 370
+  size: 302, 368
+  orig: 304, 370
+  offset: 1, 1
+  index: -1
+fat_vudox
+  rotate: true
+  xy: 2, 437
+  size: 307, 308
+  orig: 307, 308
+  offset: 0, 0
+  index: -1
+punch
+  rotate: false
+  xy: 2, 2
+  size: 475, 432
+  orig: 475, 432
+  offset: 0, 0
+  index: -1
+
+coma6.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+flash
+  rotate: false
+  xy: 2, 2
+  size: 827, 827
+  orig: 827, 827
+  offset: 0, 0
+  index: -1
+
+coma7.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body_normal
+  rotate: false
+  xy: 2, 2
+  size: 669, 712
+  orig: 669, 712
+  offset: 0, 0
+  index: -1

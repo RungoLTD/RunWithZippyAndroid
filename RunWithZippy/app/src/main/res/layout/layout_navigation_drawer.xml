@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="bottom"
+    android:background="@color/colorPrimary"
+    android:padding="16dp"
+    android:layout_height="150dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Firstname Lastname"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/txtPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:text="+# (###) ### ## ##"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+</RelativeLayout>

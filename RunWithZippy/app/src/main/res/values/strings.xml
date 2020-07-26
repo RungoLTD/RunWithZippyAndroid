@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">RunWithZippy</string>
+    <string name="sign_up_license">Нажимая на кнопку \"Войти\", вы принимаете условия пользовательского соглашения и политику конфиденциальности.</string>
+    <string name="sign_up">Зарегистрироваться</string>
+
+    <string name="input_login">Логин</string>
+    <string name="input_password">Пароль</string>
+    <string name="login">Войти</string>
+    <string name="login_title">Вход</string>
+    <string name="forget_password">Забыли пароль?</string>
+    <string name="start">Старт</string>
+
+    <!--Menu navigation drawer-->
+    <string name="menu_running">Бег</string>
+    <string name="menu_tape">Лента</string>
+    <string name="menu_activity">Активность</string>
+    <string name="menu_challenges">Вызовы</string>
+    <string name="menu_club">Клуб</string>
+    <string name="menu_incoming">Входящие</string>
+    <string name="menu_settings">Настройки</string>
+
+    <string name="coin">99999999</string>
 </resources>

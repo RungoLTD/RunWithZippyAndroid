@@ -1,11 +1,31 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/bg_splash</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+    </style>
+
+    <style name="InputTextStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="boxBackgroundColor">@android:color/white</item>
+        <item name="errorTextColor">@color/colorRed</item>
+        <item name="errorTextAppearance">@style/InputTextErrorStyle</item>
+        <item name="boxStrokeErrorColor">@color/colorRed</item>
+        <item name="errorEnabled">true</item>
+        <item name="errorIconDrawable">@null</item>
+    </style>
+
+    <style name="InputTextErrorStyle" parent="@android:style/TextAppearance">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
 
 </resources>

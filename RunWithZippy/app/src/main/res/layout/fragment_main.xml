@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/rlContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_50ssp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold|italic"
+            android:layout_marginTop="@dimen/_36sdp"
+            android:layout_centerHorizontal="true"
+            android:text="40,3"/>
+
+        <RelativeLayout
+            android:id="@+id/rlZippy"
+            android:layout_below="@id/tvDistance"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_300sdp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/cat_floor"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_28sdp"
+            android:backgroundTint="@android:color/black"
+            android:text="@string/start"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_24ssp"
+            android:textStyle="italic" />
+
+        <ImageView
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/_32sdp"
+            android:layout_marginBottom="@dimen/_42sdp"
+            android:background="?android:attr/actionBarItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_music_player" />
+
+        <ImageView
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_32sdp"
+            android:layout_marginBottom="@dimen/_42sdp"
+            android:background="?android:attr/actionBarItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_settings" />
+
+    </RelativeLayout>
+</layout>

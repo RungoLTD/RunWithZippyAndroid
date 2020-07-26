@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_running"
+        android:title="@string/menu_running"/>
+
+    <item
+        android:id="@+id/menu_tape"
+        android:title="@string/menu_tape"/>
+
+    <item
+        android:id="@+id/menu_activity"
+        android:title="@string/menu_activity"/>
+
+    <item
+        android:id="@+id/menu_challenges"
+        android:title="@string/menu_challenges"/>
+
+    <item
+        android:id="@+id/menu_club"
+        android:title="@string/menu_club"/>
+
+    <item
+        android:id="@+id/menu_incoming"
+        android:title="@string/menu_incoming"/>
+
+    <item
+        android:id="@+id/menu_settings"
+        android:title="@string/menu_settings"/>
+</menu>

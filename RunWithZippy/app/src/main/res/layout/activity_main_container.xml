@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:id="@+id/fragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:background="?android:attr/actionBarItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_menu_drawer" />
+
+            <RelativeLayout
+                android:layout_width="@dimen/_80sdp"
+                android:background="@drawable/bg_fish_coin"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_height="@dimen/_24sdp">
+
+                <TextView
+                    android:id="@+id/tvCoin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="9999999"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="italic|bold"
+                    android:textColor="@android:color/white"/>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:layout_marginStart="@dimen/_80sdp"
+                android:src="@drawable/ic_fish"/>
+
+            <fragment
+                android:id="@+id/mainContainer"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/navigation"
+                app:defaultNavHost="true" />
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/white"
+                app:itemIconSize="@dimen/_18sdp"
+                app:itemIconTint="@drawable/bottom_navigation_selector"
+                app:itemTextColor="@drawable/bottom_navigation_selector"
+                app:labelVisibilityMode="unlabeled"
+                app:menu="@menu/main_container_menu" />
+        </RelativeLayout>
+
+         <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/layout_navigation_drawer"
+            app:menu="@menu/menu_navigation_drawer" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>
