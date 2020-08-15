@@ -1,9 +1,9 @@
 package com.rungo.runwithzippy.domain.repository
 
-import com.rungo.runwithzippy.data.remote.AuthResponse
-import com.rungo.runwithzippy.data.remote.AuthWithEmail
-import com.rungo.runwithzippy.data.remote.AuthWithFacebook
-import com.rungo.runwithzippy.data.remote.AuthWithGoogle
+import com.rungo.runwithzippy.data.model.AuthResponse
+import com.rungo.runwithzippy.data.model.AuthWithEmail
+import com.rungo.runwithzippy.data.model.AuthWithFacebook
+import com.rungo.runwithzippy.data.model.AuthWithGoogle
 
 interface AuthRepository {
 

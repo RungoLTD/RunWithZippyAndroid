@@ -2,9 +2,8 @@ package com.rungo.runwithzippy.domain.usecase.auth
 
 import com.rungo.runwithzippy.base.BaseUseCase
 import com.rungo.runwithzippy.data.remote.ApiErrorHandle
-import com.rungo.runwithzippy.data.remote.AuthResponse
-import com.rungo.runwithzippy.data.remote.AuthWithFacebook
-import com.rungo.runwithzippy.data.remote.AuthWithGoogle
+import com.rungo.runwithzippy.data.model.AuthResponse
+import com.rungo.runwithzippy.data.model.AuthWithFacebook
 import com.rungo.runwithzippy.domain.repository.AuthRepository
 
 class AuthWithFacebookUseCase constructor(

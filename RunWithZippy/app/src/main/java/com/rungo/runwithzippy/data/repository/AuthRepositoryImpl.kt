@@ -1,9 +1,13 @@
 package com.rungo.runwithzippy.data.repository
 
+import com.rungo.runwithzippy.data.model.AuthResponse
+import com.rungo.runwithzippy.data.model.AuthWithEmail
+import com.rungo.runwithzippy.data.model.AuthWithFacebook
+import com.rungo.runwithzippy.data.model.AuthWithGoogle
 import com.rungo.runwithzippy.data.remote.*
 import com.rungo.runwithzippy.domain.repository.AuthRepository
 
-class AuthRepository(private val apiService: ApiService) : AuthRepository {
+class AuthRepositoryImpl(private val apiService: ApiService) : AuthRepository {
 
     override suspend fun loginWithEmail(authWithEmail: AuthWithEmail): AuthResponse {
         return apiService.loginWithEmail(authWithEmail)

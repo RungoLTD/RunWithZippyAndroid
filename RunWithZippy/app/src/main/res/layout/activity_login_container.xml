@@ -14,5 +14,13 @@
             android:keepScreenOn="true"
             app:navGraph="@navigation/login"
             app:defaultNavHost="true" />
+
+        <include
+            android:id="@+id/disableNetwork"
+            layout="@layout/layout_connection_state"
+            android:layout_width="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_height="@dimen/_32sdp"
+            android:visibility="gone" />
     </FrameLayout>
 </layout>

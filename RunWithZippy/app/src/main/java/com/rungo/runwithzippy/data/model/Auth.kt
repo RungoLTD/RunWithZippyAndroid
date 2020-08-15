@@ -1,4 +1,4 @@
-package com.rungo.runwithzippy.data.remote
+package com.rungo.runwithzippy.data.model
 
 import com.rungo.runwithzippy.utils.Constants
 
@@ -20,9 +20,10 @@ data class AuthWithFacebook(
 
 data class AuthResponse(
     val success: Boolean,
-    val data: Data
+    val data: AccessToken?,
+    val error: String?
 )
 
-data class Data(
-    val access_token: String
+data class AccessToken(
+    val accessToken: String
 )

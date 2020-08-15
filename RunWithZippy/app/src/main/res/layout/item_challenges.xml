@@ -4,60 +4,69 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_140sdp"
-        android:layout_margin="@dimen/_10sdp"
-        android:background="@drawable/bg_challenges_item">
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_16sdp"
-            android:layout_marginEnd="@dimen/_16sdp"
-            android:src="@drawable/ic_sport_running_man"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="@drawable/bg_challenges_item">
 
-        <TextView
-            android:id="@+id/tvTrainingName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/tvDaysRemaining"
-            android:layout_alignStart="@id/tvDaysRemaining"
-            android:layout_marginBottom="@dimen/_4sdp"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/_20ssp"
-            android:textStyle="bold|italic"
-            tools:text="15km за неделю" />
+            <ImageView
+                android:id="@+id/ivEnableState"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:src="@drawable/ic_sport_running_man"/>
 
-        <TextView
-            android:id="@+id/tvDaysRemaining"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="@dimen/_16sdp"
-            android:layout_marginBottom="@dimen/_16sdp"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/_14ssp"
-            android:textStyle="bold|italic"
-            tools:text="осталось 4 дн." />
+            <TextView
+                android:id="@+id/tvTrainingName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/tvDescription"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold|italic"
+                tools:text="15km за неделю" />
 
-        <TextView
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/_14ssp"
-            android:textStyle="bold|italic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toStartOf="@id/ivFish"
-            android:layout_alignTop="@id/ivFish"
-            tools:text="50"/>
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTrainingName"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_8ssp"
+                android:textStyle="bold|italic"
+                tools:text="осталось 4 дн." />
 
-        <ImageView
-            android:id="@+id/ivFish"
-            android:layout_width="@dimen/_24sdp"
-            android:layout_height="@dimen/_24sdp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="@dimen/_4sdp"
-            android:layout_marginBottom="@dimen/_4sdp"
-            android:src="@drawable/ic_fish" />
+            <ImageView
+                android:id="@+id/ivFish"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:src="@drawable/ic_fish" />
 
+            <TextView
+                android:id="@+id/tvFishCoin"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold|italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/ivFish"
+                android:layout_alignTop="@id/ivFish"
+                android:text="50"/>
+
+        </RelativeLayout>
     </RelativeLayout>
 </layout>

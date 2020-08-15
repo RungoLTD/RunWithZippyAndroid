@@ -5,6 +5,7 @@ import okhttp3.ResponseBody
 import retrofit2.HttpException
 import java.io.IOException
 import java.net.SocketTimeoutException
+import java.net.UnknownHostException
 
 class ApiErrorHandle {
 
@@ -50,6 +51,5 @@ class ApiErrorHandle {
             e.printStackTrace()
             ErrorModel(message = e.message, errorStatus = ErrorModel.ErrorStatus.NOT_DEFINED)
         }
-
     }
 }

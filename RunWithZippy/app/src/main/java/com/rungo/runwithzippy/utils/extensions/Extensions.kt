@@ -7,21 +7,25 @@ import android.util.DisplayMetrics
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 fun AppCompatActivity.isNetworkAvailable(): Boolean {
+    return networkAvailable(this)
+}
+
+fun Fragment.isNetworkAvailable(): Boolean {
+    return networkAvailable(requireContext())
+}
+
+private fun networkAvailable(context: Context): Boolean {
     val connectivityManager =
-        this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-
-    if (Build.VERSION.SDK_INT < 23) {
-
-    }
-
-    val networkInfo = connectivityManager.activeNetworkInfo
-    return networkInfo != null && networkInfo.isConnected
+        context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    val activeNetwork = connectivityManager.activeNetworkInfo
+    return activeNetwork != null && activeNetwork.isConnected
 }
 
 const val FLAGS_FULLSCREEN =

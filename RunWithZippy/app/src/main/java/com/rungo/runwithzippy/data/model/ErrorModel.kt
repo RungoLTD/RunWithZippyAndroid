@@ -6,6 +6,7 @@ private const val TIME_OUT_ERROR_MESSAGE = "Time out!"
 private const val EMPTY_RESPONSE_ERROR_MESSAGE = "Empty response!"
 private const val NOT_DEFINED_ERROR_MESSAGE = "Not defined!"
 private const val UNAUTHORIZED_ERROR_MESSAGE = "Unauthorized!"
+private const val UNKNOWN_HOST = "No connection at all"
 
 data class ErrorModel(
     val message: String?,
@@ -24,6 +25,7 @@ data class ErrorModel(
             ErrorStatus.EMPTY_RESPONSE -> EMPTY_RESPONSE_ERROR_MESSAGE
             ErrorStatus.NOT_DEFINED -> NOT_DEFINED_ERROR_MESSAGE
             ErrorStatus.UNAUTHORIZED -> UNAUTHORIZED_ERROR_MESSAGE
+            ErrorStatus.UNKNOWN_HOST -> UNKNOWN_HOST
         }
     }
 
@@ -54,6 +56,11 @@ data class ErrorModel(
         /**
          * bad credential
          */
-        UNAUTHORIZED
+        UNAUTHORIZED,
+
+        /**
+         * unknown host
+         */
+        UNKNOWN_HOST
     }
 }

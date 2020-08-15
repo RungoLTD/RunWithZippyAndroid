@@ -6,4 +6,9 @@ object Constants {
     const val emailAuth = "email"
     const val googleAuth = "google"
     const val facebookAuth = "facebook"
+
+    const val PREFERENCE_NAME = "zippy_prefs"
+
+    //SharedPreferences keys
+    const val ACCESS_TOKEN = "access_token"
 }

@@ -2,7 +2,7 @@ package com.rungo.runwithzippy.data.model
 
 data class ChallengeResponse (
     val success : Boolean,
-    val challenges : List<Challenge>
+    val data : List<Challenge>
 )
 
 data class Challenge (

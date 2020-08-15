@@ -1,26 +1,17 @@
 package com.rungo.runwithzippy.presentation.containers
 
-import android.content.Context
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.core.view.GravityCompat
-import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
-import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.plusAssign
 import androidx.navigation.ui.setupWithNavController
 import com.rungo.runwithzippy.R
 import com.rungo.runwithzippy.base.BaseActivity
 import com.rungo.runwithzippy.databinding.ActivityMainContainerBinding
-import com.rungo.runwithzippy.presentation.features.main.MainFragment
 import com.rungo.runwithzippy.utils.KeepStateNavigator
-import com.rungo.runwithzippy.utils.model.Zippy
 
 class MainContainer : BaseActivity(), DrawerLayout.DrawerListener {
 
@@ -30,8 +21,7 @@ class MainContainer : BaseActivity(), DrawerLayout.DrawerListener {
         super.onCreate(savedInstanceState)
         setupListeners()
         setupNavigation()
-
-        binding.drawerLayout.bringToFront()
+        setupObserver()
     }
 
     private fun setupNavigation() {
@@ -55,23 +45,19 @@ class MainContainer : BaseActivity(), DrawerLayout.DrawerListener {
             binding.drawerLayout.closeDrawers()
 
             when (menuItem.itemId) {
-                R.id.menu_running -> {
-                    return@setNavigationItemSelectedListener true
-                }
+
             }
             true
         }
     }
 
-    companion object {
-        fun getZippy(context: Context) : Zippy {
-            return Zippy(context)
-        }
+    private fun setupObserver() {
+        connectionLiveData.observe(this, Observer {
+            binding.disableNetwork.visibility = if (it) View.GONE else View.VISIBLE
+        })
     }
 
-    override fun onDrawerStateChanged(newState: Int) {
-
-    }
+    override fun onDrawerStateChanged(newState: Int) {}
 
     override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
         binding.fragmentContainer.x = slideOffset * drawerView.width;
@@ -79,9 +65,7 @@ class MainContainer : BaseActivity(), DrawerLayout.DrawerListener {
         binding.drawerLayout.requestLayout();
     }
 
-    override fun onDrawerClosed(drawerView: View) {
-    }
+    override fun onDrawerClosed(drawerView: View) {}
 
-    override fun onDrawerOpened(drawerView: View) {
-    }
+    override fun onDrawerOpened(drawerView: View) {}
 }

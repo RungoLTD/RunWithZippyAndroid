@@ -1,5 +1,8 @@
 package com.rungo.runwithzippy.di
 
+import com.rungo.runwithzippy.data.remote.ApiErrorHandle
+import com.rungo.runwithzippy.data.remote.ApiService
+import com.rungo.runwithzippy.data.remote.RequestInterceptor
 import com.rungo.runwithzippy.utils.Constants
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -8,23 +11,25 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-val NetworkModule = module {
+val networkModule = module {
     single {
-        val loggingInterceptor = HttpLoggingInterceptor()
-        loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
-
         OkHttpClient.Builder()
             .connectTimeout(60L, TimeUnit.SECONDS)
             .readTimeout(60L, TimeUnit.SECONDS)
-            .addInterceptor(loggingInterceptor)
+            .addInterceptor(RequestInterceptor())
+            .addInterceptor(HttpLoggingInterceptor())
             .build()
     }
 
     single {
         Retrofit.Builder()
-            .client(get<OkHttpClient>())
             .baseUrl(Constants.API)
+            .client(get<OkHttpClient>())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
+    single { get<Retrofit>().create(ApiService::class.java) }
+
+    single { ApiErrorHandle() }
 }

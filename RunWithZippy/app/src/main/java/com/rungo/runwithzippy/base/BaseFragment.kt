@@ -8,6 +8,9 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import com.rungo.runwithzippy.utils.EventData
+import timber.log.Timber
 
 abstract class BaseFragment : Fragment() {
     protected inline fun <reified T : ViewDataBinding> binding(
@@ -28,4 +31,15 @@ abstract class BaseFragment : Fragment() {
     open fun setupListeners() {}
 
     open fun onAfterViewCreated() {}
+
+    fun setupEventListener(viewModel: BaseViewModel) {
+        viewModel.events.observe(viewLifecycleOwner, Observer { event ->
+            event.getContentIfNotHandled()?.let {
+                Timber.d("EVENT FIRED: ${it.eventCode}")
+                onEvent(it)
+            }
+        })
+    }
+
+    open fun onEvent(eventData: EventData) {}
 }

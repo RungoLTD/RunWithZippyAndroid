@@ -2,6 +2,7 @@ package com.rungo.runwithzippy.base
 
 import com.rungo.runwithzippy.data.remote.ApiErrorHandle
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import retrofit2.HttpException

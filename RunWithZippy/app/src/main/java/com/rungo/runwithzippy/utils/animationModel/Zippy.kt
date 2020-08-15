@@ -1,4 +1,4 @@
-package com.rungo.runwithzippy.utils.model
+package com.rungo.runwithzippy.utils.animationModel
 
 import android.content.Context
 import com.badlogic.gdx.ApplicationAdapter
@@ -9,7 +9,6 @@ import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch
 import com.badlogic.gdx.graphics.g2d.TextureAtlas
 import com.esotericsoftware.spine.*
 import com.rungo.runwithzippy.utils.extensions.getScreenWidth
-import javax.microedition.khronos.opengles.GL10
 
 class Zippy(private val context: Context) : ApplicationAdapter() {
 

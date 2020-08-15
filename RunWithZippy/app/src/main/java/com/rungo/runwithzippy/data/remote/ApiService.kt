@@ -1,5 +1,6 @@
 package com.rungo.runwithzippy.data.remote
 
+import com.rungo.runwithzippy.data.model.*
 import retrofit2.http.Body
 import retrofit2.http.POST
 
@@ -19,4 +20,9 @@ interface ApiService {
     suspend fun loginWithFacebook(
         @Body authWithFacebook: AuthWithFacebook
     ): AuthResponse
+
+    @POST("/challenges/fetch")
+    suspend fun getChallenges(
+        @Body accessToken: AccessToken
+    ): ChallengeResponse
 }

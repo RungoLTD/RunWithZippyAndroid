@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">RunWithZippy</string>
+    <string name="api_key">AIzaSyB9LimEtpbZfBAvzyVbzjaqz_z_vpDW7Xc</string>
+    <string name="client_id">1017242248802-t9aga5jeauaslhlam2f25f6bh2mn3mj8.apps.googleusercontent.com</string>
+
     <string name="sign_up_license">Нажимая на кнопку \"Войти\", вы принимаете условия пользовательского соглашения и политику конфиденциальности.</string>
     <string name="sign_up">Зарегистрироваться</string>
 
@@ -14,10 +17,18 @@
     <string name="menu_running">Бег</string>
     <string name="menu_tape">Лента</string>
     <string name="menu_activity">Активность</string>
-    <string name="menu_challenges">Вызовы</string>
     <string name="menu_club">Клуб</string>
     <string name="menu_incoming">Входящие</string>
     <string name="menu_settings">Настройки</string>
 
+    <string name="menu_main">Главная</string>
+    <string name="menu_friends">Друзья</string>
+    <string name="menu_skins">Скины</string>
+    <string name="menu_training">Тренировка</string>
+    <string name="menu_challenges">Челлендж</string>
+
     <string name="coin">99999999</string>
+    <string name="no_connection">ОТСУТСТВУЕТ ИНТЕРНЕТ-СОЕДИНЕНИЕ</string>
+    <string name="validate_email">Не корректная эл. почта</string>
+    <string name="validate_empty_field">Поле не должно быть пустым</string>
 </resources>
