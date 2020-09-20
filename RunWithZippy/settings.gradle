@@ -1,2 +1,3 @@
+include ':spine-android-library'
 rootProject.name='RunWithZippy'
 include ':app'

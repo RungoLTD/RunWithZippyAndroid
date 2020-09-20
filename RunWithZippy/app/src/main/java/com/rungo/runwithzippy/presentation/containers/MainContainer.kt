@@ -1,5 +1,6 @@
 package com.rungo.runwithzippy.presentation.containers
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.core.view.GravityCompat
@@ -24,6 +25,11 @@ class MainContainer : BaseActivity(), DrawerLayout.DrawerListener {
         setupObserver()
     }
 
+    override fun exit() {
+
+    }
+
+    @SuppressLint("RestrictedApi")
     private fun setupNavigation() {
         val navController = findNavController(R.id.mainContainer)
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.mainContainer)!!

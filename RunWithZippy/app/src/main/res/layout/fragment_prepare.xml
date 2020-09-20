@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/ivCircle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_24sdp"
+            android:src="@drawable/ic_ellipse"/>
+
+        <TextView
+            android:id="@+id/tvCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_200sdp"
+            android:layout_centerInParent="true"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold|italic"
+            android:text="3"/>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchWarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvCount"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:layout_centerHorizontal="true"
+            android:thumb="@drawable/ic_warm_up"
+            app:track="@drawable/ic_switch"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/switchWarm"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/start_warm_up"/>
+
+    </RelativeLayout>
+</layout>

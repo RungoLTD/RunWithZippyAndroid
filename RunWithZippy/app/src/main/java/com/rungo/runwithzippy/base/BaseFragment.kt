@@ -1,5 +1,6 @@
 package com.rungo.runwithzippy.base
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,10 +10,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import com.badlogic.gdx.backends.android.AndroidFragmentApplication
 import com.rungo.runwithzippy.utils.EventData
 import timber.log.Timber
 
 abstract class BaseFragment : Fragment() {
+
     protected inline fun <reified T : ViewDataBinding> binding(
         inflater: LayoutInflater,
         @LayoutRes resId: Int,

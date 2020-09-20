@@ -16,6 +16,10 @@ class SplashActivity : BaseActivity() {
         openNextScreen()
     }
 
+    override fun exit() {
+
+    }
+
     private fun openNextScreen() {
         if (viewModel.isAccessTokenAvailable()) {
             val intent = Intent(this, MainContainer::class.java)

@@ -16,10 +16,10 @@ class Zippy(private val context: Context) : ApplicationAdapter() {
     private val batch: PolygonSpriteBatch by lazy { PolygonSpriteBatch() }
     private val renderer: SkeletonRenderer by lazy { SkeletonRenderer() }
     private val debugRenderer: SkeletonRendererDebug by lazy { SkeletonRendererDebug() }
-    private lateinit var atlas: TextureAtlas
+    private var atlas: TextureAtlas? = null
     private var skeleton: Skeleton? = null
     private var state: AnimationState? = null
-    private lateinit var json: SkeletonJson
+    private var json: SkeletonJson? = null
 
     override fun create() {
         renderer.premultipliedAlpha = true // PMA results in correct blending without outlines.
@@ -31,8 +31,8 @@ class Zippy(private val context: Context) : ApplicationAdapter() {
 
         atlas = TextureAtlas(Gdx.files.internal("coma/coma.atlas"))
         json = SkeletonJson(atlas) // This loads skeleton JSON data, which is stateless.
-        json.scale = 0.5f // Load the skeleton at 60% the size it was in Spine.
-        val skeletonData = json.readSkeletonData(Gdx.files.internal("coma/coma.json"))
+        json?.scale = 0.5f // Load the skeleton at 60% the size it was in Spine.
+        val skeletonData = json?.readSkeletonData(Gdx.files.internal("coma/coma.json"))
         skeleton = Skeleton(skeletonData) // Skeleton holds skeleton state (bone positions, slot attachments, etc).
         skeleton?.setPosition((getScreenWidth(context) / 4).toFloat(), 0f)
         val stateData = AnimationStateData(skeletonData) // Defines mixing (crossfading) between animations.
@@ -66,8 +66,7 @@ class Zippy(private val context: Context) : ApplicationAdapter() {
     }
 
     override fun dispose() {
-
-        atlas.dispose()
+        atlas?.dispose()
     }
 
     fun setAnimate(animate: String?) {

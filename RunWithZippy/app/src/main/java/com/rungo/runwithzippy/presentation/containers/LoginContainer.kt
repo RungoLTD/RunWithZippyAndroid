@@ -3,6 +3,9 @@ package com.rungo.runwithzippy.presentation.containers
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import com.rungo.runwithzippy.R
 import com.rungo.runwithzippy.base.BaseActivity
@@ -14,8 +17,11 @@ class LoginContainer : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.lifecycleOwner = this
         setupObservers()
+    }
+
+    override fun exit() {
+
     }
 
     private fun setupObservers() {
