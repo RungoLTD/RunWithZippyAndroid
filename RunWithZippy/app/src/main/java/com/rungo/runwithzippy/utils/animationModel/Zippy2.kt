@@ -6,11 +6,12 @@ import com.esotericsoftware.spine.Animation
 import com.esotericsoftware.spine.view.core.DisplayRenderParam
 import com.esotericsoftware.spine.view.core.SkeletonDisplayer
 import com.esotericsoftware.spine.view.core.SkeletonDisplayerBuilder
+import com.rungo.runwithzippy.utils.AnimationEnum
 
 class Zippy2 : ApplicationAdapter() {
 
     var renderParam: DisplayRenderParam? = null
-    var skeletonDisplayer: SkeletonDisplayer? = null
+    private var skeletonDisplayer: SkeletonDisplayer? = null
 
     override fun create() {
         super.create()
@@ -22,17 +23,13 @@ class Zippy2 : ApplicationAdapter() {
 
         skeletonDisplayer?.create()
 
-        skeletonDisplayer?.setAnimationByIndex(
-            11, true,
-            0.37f,
-            Animation.MixBlend.replace,
-            1.0f
-        )
+        skeletonDisplayer?.setAnimation(AnimationEnum.BREATHES.animationName, true, 0.37f, Animation.MixBlend.replace, 1.0f)
     }
 
     override fun render() {
         super.render()
         renderParam?.delta = Gdx.graphics.deltaTime
+        renderParam?.isShowBoundingBoxes = false
         skeletonDisplayer?.setRenderParam(renderParam)
         skeletonDisplayer?.render()
     }

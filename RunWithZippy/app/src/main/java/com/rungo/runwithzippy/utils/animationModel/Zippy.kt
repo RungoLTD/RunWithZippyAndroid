@@ -51,8 +51,6 @@ class Zippy(private val context: Context) : ApplicationAdapter() {
         state?.apply(skeleton) // Poses skeleton using current animations. This sets the bones' local SRT.
         skeleton?.updateWorldTransform() // Uses the bones' local SRT to compute their world SRT.
 
-        // Configure the camera, SpriteBatch, and SkeletonRendererDebug.
-
         camera.update()
         batch.projectionMatrix?.set(camera.combined)
         debugRenderer.shapeRenderer?.projectionMatrix = camera.combined

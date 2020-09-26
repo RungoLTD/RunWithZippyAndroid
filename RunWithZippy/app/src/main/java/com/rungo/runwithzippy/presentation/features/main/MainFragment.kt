@@ -38,13 +38,6 @@ class MainFragment : AndroidFragmentApplication() {
         zippy = Zippy2()
 
         val displayRenderParam = DisplayRenderParam()
-        displayRenderParam.isShowBones = false
-        displayRenderParam.isShowRegions = false
-        displayRenderParam.isShowBoundingBoxes = false
-        displayRenderParam.isShowPaths = false
-        displayRenderParam.isShowPoints = false
-        displayRenderParam.isShowClipping = false
-        displayRenderParam.isShowPremultipliedAlpha = false
         displayRenderParam.speed = 0.3f
         displayRenderParam.scaleX = 0.3f
         displayRenderParam.scaleY = 0.3f
