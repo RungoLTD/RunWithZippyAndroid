@@ -17,13 +17,13 @@ class TrainingViewModel(
 ) : BaseViewModel() {
 
     var progressBar = MutableLiveData<Boolean>().apply { value = false }
-    var trainings = MutableLiveData<List<List<Training>>>().apply { value = null }
-
-    init {
-        getTrainings()
-    }
+    var trainings = trainingUseCase.trainings
 
     fun getTrainings() {
+        if (!trainings.value.isNullOrEmpty()) {
+            return
+        }
+
         progressBar.value = true
 
         Timber.d("ACCESS TOKEN ${sharedPreferences[Constants.ACCESS_TOKEN]}")
@@ -33,7 +33,7 @@ class TrainingViewModel(
             override fun onSuccess(result: TrainingResponse) {
                 if (result.success) {
                     Timber.d("TRAINING ${result.data}")
-                    trainings.value = result.data
+                    trainingUseCase.trainings.value = result.data
                 } else {
                     sendEvent(EventEnums.FAIL)
                 }

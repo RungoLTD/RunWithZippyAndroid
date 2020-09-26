@@ -20,6 +20,9 @@ class ChallengeViewModel constructor(
     var challenges = MutableLiveData<List<Challenge>>().apply { value = null }
 
     fun getChallenges() {
+        if (!challenges.value.isNullOrEmpty()) {
+            return
+        }
         progressBar.value = true
 
         Timber.d("ACCESS TOKEN ${sharedPreferences[Constants.ACCESS_TOKEN]}")

@@ -8,81 +8,106 @@
         android:layout_height="match_parent"
         android:fillViewport="true">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tvTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_8sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:text="@string/training_programs"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/_24ssp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_8sdp"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:text="@string/recommended"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/_16ssp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvRecommended"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:itemCount="3"
-                tools:listitem="@layout/item_trainings" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_8sdp"
-                android:text="@string/popular"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/_16ssp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvPopular"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:itemCount="1"
-                tools:listitem="@layout/item_trainings" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
+                android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tvTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_8sdp"
-                    android:text="@string/marathon"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="@string/training_programs"
                     android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/_16ssp" />
+                    android:textSize="@dimen/_24ssp"
+                    android:textStyle="bold" />
 
-                <com.google.android.material.tabs.TabLayout
-                    android:id="@+id/tab"
+                <TextView
+                    android:id="@+id/tvRecommended"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </RelativeLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="@string/recommended"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_16ssp"
+                    android:visibility="invisible" />
 
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/vpMarathon"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvRecommended"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_trainings" />
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/tvPopular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="@string/popular"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_16ssp"
+                    android:visibility="invisible" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPopular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/item_trainings" />
+
+                <RelativeLayout
+                    android:id="@+id/rlMarathon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/marathon"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/_16ssp" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        app:tabBackground="@drawable/tab_indicator"
+                        app:tabGravity="center"
+                        app:tabIndicatorHeight="0dp"
+                        app:tabPaddingEnd="@dimen/_10sdp"
+                        app:tabPaddingStart="@dimen/_10sdp" />
+                </RelativeLayout>
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/vpMarathon"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_140sdp" />
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
 </layout>

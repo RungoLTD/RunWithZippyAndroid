@@ -10,4 +10,6 @@
 
     <color name="colorDarkGray">#84918f</color>
     <color name="colorBlack">#242424</color>
+
+    <color name="colorGrayLight">#F2F2F2</color>
 </resources>
