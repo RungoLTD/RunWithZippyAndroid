@@ -27,5 +27,8 @@
         <item name="android:letterSpacing">0</item>
     </style>
 
-
+    <style name="roundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/_12sdp</item>
+    </style>
 </resources>

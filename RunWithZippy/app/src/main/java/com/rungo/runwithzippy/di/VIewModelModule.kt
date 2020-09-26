@@ -12,5 +12,5 @@ val viewModelModule = module {
     viewModel { SplashViewModel(get()) }
     viewModel { LoginViewModel(get(), get(), get()) }
     viewModel { ChallengeViewModel(get(), get()) }
-    viewModel { TrainingViewModel() }
+    viewModel { TrainingViewModel(get(), get()) }
 }
