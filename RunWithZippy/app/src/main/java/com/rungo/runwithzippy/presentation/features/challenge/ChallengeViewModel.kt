@@ -5,10 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.rungo.runwithzippy.base.BaseViewModel
 import com.rungo.runwithzippy.base.UseCaseResponse
 import com.rungo.runwithzippy.data.local.PreferenceHelper
-import com.rungo.runwithzippy.data.model.Challenge
-import com.rungo.runwithzippy.data.model.ChallengeResponse
-import com.rungo.runwithzippy.data.model.AccessToken
-import com.rungo.runwithzippy.data.model.ErrorModel
+import com.rungo.runwithzippy.data.model.*
 import com.rungo.runwithzippy.domain.usecase.GetChallengesUseCase
 import com.rungo.runwithzippy.utils.Constants
 import com.rungo.runwithzippy.utils.EventEnums
@@ -27,9 +24,14 @@ class ChallengeViewModel constructor(
 
         Timber.d("ACCESS TOKEN ${sharedPreferences[Constants.ACCESS_TOKEN]}")
 
-        challengesUseCase.invoke(viewModelScope, AccessToken(sharedPreferences[Constants.ACCESS_TOKEN]), object : UseCaseResponse<ChallengeResponse> {
+        challengesUseCase.invoke(viewModelScope, AccessTokenParam(sharedPreferences[Constants.ACCESS_TOKEN]), object : UseCaseResponse<ChallengeResponse> {
             override fun onSuccess(result: ChallengeResponse) {
-                challenges.value = result.data
+                if (result.success) {
+                    challenges.value = result.data
+                } else {
+                    sendEvent(EventEnums.FAIL)
+                }
+
                 progressBar.value = false
             }
 

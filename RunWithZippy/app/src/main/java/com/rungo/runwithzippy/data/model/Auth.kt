@@ -25,5 +25,9 @@ data class AuthResponse(
 )
 
 data class AccessToken(
+    val access_token: String
+)
+
+data class AccessTokenParam(
     val accessToken: String
 )

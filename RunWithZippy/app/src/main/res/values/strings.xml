@@ -33,4 +33,9 @@
     <string name="validate_empty_field">Поле не должно быть пустым</string>
 
     <string name="start_warm_up">Начать разминку</string>
+
+    <string name="training_programs">Программы \nтренировок</string>
+    <string name="recommended">Рекомендуем</string>
+    <string name="popular">Популярное</string>
+    <string name="marathon">Марафон</string>
 </resources>

@@ -19,6 +19,6 @@ class AuthWithEmailUseCase constructor(
     }
 
     fun setAccessToken(authResponse: AuthResponse) {
-        authResponse.data?.accessToken?.let { sharedPreferences.put(Constants.ACCESS_TOKEN, it) }
+        authResponse.data?.access_token?.let { sharedPreferences.put(Constants.ACCESS_TOKEN, it) }
     }
 }

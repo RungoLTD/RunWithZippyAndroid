@@ -11,6 +11,8 @@ import com.rungo.runwithzippy.data.model.AuthWithEmail
 import com.rungo.runwithzippy.databinding.FragmentChallengesBinding
 import com.rungo.runwithzippy.presentation.containers.LoginContainer
 import com.rungo.runwithzippy.presentation.containers.MainContainer
+import com.rungo.runwithzippy.utils.EventData
+import com.rungo.runwithzippy.utils.EventEnums
 import com.rungo.runwithzippy.utils.extensions.isNetworkAvailable
 import com.rungo.runwithzippy.utils.extensions.showToast
 import com.rungo.runwithzippy.utils.extensions.text
@@ -48,5 +50,19 @@ class ChallengeFragment : BaseFragment() {
                 adapter.setList(it)
             }
         })
+
+        viewModel.progressBar.observe(viewLifecycleOwner, Observer {
+            binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE
+        })
+    }
+
+    override fun onEvent(eventData: EventData) {
+        when (eventData.eventCode) {
+            EventEnums.SUCCESS -> { }
+            EventEnums.FAIL -> {
+                showToast("Не удалось получить данные")
+            }
+            EventEnums.OTHER -> { }
+        }
     }
 }

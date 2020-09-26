@@ -1,6 +1,7 @@
 package com.rungo.runwithzippy.di
 
 import com.rungo.runwithzippy.domain.usecase.GetChallengesUseCase
+import com.rungo.runwithzippy.domain.usecase.GetTrainingUseCase
 import com.rungo.runwithzippy.domain.usecase.auth.AuthWithEmailUseCase
 import com.rungo.runwithzippy.domain.usecase.auth.AuthWithFacebookUseCase
 import com.rungo.runwithzippy.domain.usecase.auth.AuthWithGoogleUseCase
@@ -15,4 +16,6 @@ val useCaseModule = module {
     single { AuthWithFacebookUseCase(get(), get()) }
 
     single { GetChallengesUseCase(get(), get()) }
+
+    single { GetTrainingUseCase(get(), get()) }
 }

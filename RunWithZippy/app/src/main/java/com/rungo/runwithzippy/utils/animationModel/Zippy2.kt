@@ -2,7 +2,9 @@ package com.rungo.runwithzippy.utils.animationModel
 
 import com.badlogic.gdx.ApplicationAdapter
 import com.badlogic.gdx.Gdx
+import com.badlogic.gdx.graphics.GL20
 import com.esotericsoftware.spine.Animation
+import com.esotericsoftware.spine.SkeletonData
 import com.esotericsoftware.spine.view.core.DisplayRenderParam
 import com.esotericsoftware.spine.view.core.SkeletonDisplayer
 import com.esotericsoftware.spine.view.core.SkeletonDisplayerBuilder
@@ -28,8 +30,9 @@ class Zippy2 : ApplicationAdapter() {
 
     override fun render() {
         super.render()
-        renderParam?.delta = Gdx.graphics.deltaTime
-        renderParam?.isShowBoundingBoxes = false
+        skeletonDisplayer?.state?.update(Gdx.graphics.deltaTime)
+        skeletonDisplayer?.skeleton?.updateWorldTransform()
+
         skeletonDisplayer?.setRenderParam(renderParam)
         skeletonDisplayer?.render()
     }
@@ -41,6 +44,5 @@ class Zippy2 : ApplicationAdapter() {
 
     override fun resume() {
         super.resume()
-
     }
 }

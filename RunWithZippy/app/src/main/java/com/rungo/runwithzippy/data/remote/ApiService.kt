@@ -23,6 +23,11 @@ interface ApiService {
 
     @POST("/challenges/fetch")
     suspend fun getChallenges(
-        @Body accessToken: AccessToken
+        @Body accessToken: AccessTokenParam
     ): ChallengeResponse
+
+    @POST("/trains/getList")
+    suspend fun getTrains(
+        @Body accessTokenParam: AccessTokenParam
+    ): TrainingResponse
 }
