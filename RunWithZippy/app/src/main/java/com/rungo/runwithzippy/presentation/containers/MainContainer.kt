@@ -6,6 +6,7 @@ import android.view.View
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.plusAssign
 import androidx.navigation.ui.setupWithNavController
@@ -17,6 +18,7 @@ import com.rungo.runwithzippy.utils.KeepStateNavigator
 class MainContainer : BaseActivity(), DrawerLayout.DrawerListener {
 
     private val binding: ActivityMainContainerBinding by binding(R.layout.activity_main_container)
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,12 +33,19 @@ class MainContainer : BaseActivity(), DrawerLayout.DrawerListener {
 
     @SuppressLint("RestrictedApi")
     private fun setupNavigation() {
-        val navController = findNavController(R.id.mainContainer)
+        navController = findNavController(R.id.mainContainer)
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.mainContainer)!!
         val navigator = KeepStateNavigator(this, navHostFragment.childFragmentManager, R.id.mainContainer)
         navController.navigatorProvider += navigator
         navController.setGraph(R.navigation.main)
         binding.navigation.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            when (destination.id) {
+                R.id.mainFragment, R.id.trainingFragment, R.id.challengeFragment -> binding.navigation.visibility = View.VISIBLE
+                else -> binding.navigation.visibility = View.GONE
+            }
+        }
     }
 
     private fun setupListeners() {
@@ -74,4 +83,9 @@ class MainContainer : BaseActivity(), DrawerLayout.DrawerListener {
     override fun onDrawerClosed(drawerView: View) {}
 
     override fun onDrawerOpened(drawerView: View) {}
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        navController.popBackStack()
+    }
 }

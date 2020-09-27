@@ -38,4 +38,7 @@
     <string name="recommended">Рекомендуем</string>
     <string name="popular">Популярное</string>
     <string name="marathon">Марафон</string>
+
+    <string name="program_title">Программа</string>
+    <string name="beginning">Начинаем</string>
 </resources>

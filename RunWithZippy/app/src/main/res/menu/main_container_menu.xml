@@ -9,7 +9,7 @@
         android:title=""
         android:icon="@drawable/ic_main_menu"/>
 
-    <item android:id="@+id/statisticsFragment"
+    <item android:id="@+id/trainingFragment"
         android:title=""
         android:icon="@drawable/ic_main_statistics"/>
 </menu>

@@ -16,7 +16,13 @@
         tools:layout="@layout/fragment_challenges" />
 
     <keep_state_fragment
-        android:id="@+id/statisticsFragment"
+        android:id="@+id/trainingFragment"
         android:name="com.rungo.runwithzippy.presentation.features.training.TrainingFragment"
         tools:layout="@layout/fragment_training" />
+
+    <fragment
+        android:id="@+id/descriptionFragment"
+        android:name="com.rungo.runwithzippy.presentation.features.description.DescriptionFragment"
+        tools:layout="@layout/fragment_description" />
+
 </navigation>

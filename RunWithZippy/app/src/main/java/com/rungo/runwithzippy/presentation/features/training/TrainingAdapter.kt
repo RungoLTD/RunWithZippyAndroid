@@ -12,10 +12,15 @@ import com.rungo.runwithzippy.utils.EnumTrainingName
 class TrainingAdapter : RecyclerView.Adapter<TrainingAdapter.ViewHolder>() {
 
     private var list: List<Training> = emptyList()
+    private var onItemClickListener: ((Training) -> Unit)? = null
 
     fun setList(list: List<Training>) {
         this.list = list
         notifyDataSetChanged()
+    }
+
+    fun setItemClickListener(onItemClickListener: ((Training) -> Unit)) {
+        this.onItemClickListener = onItemClickListener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -49,6 +54,10 @@ class TrainingAdapter : RecyclerView.Adapter<TrainingAdapter.ViewHolder>() {
                         ContextCompat.getDrawable(context, R.drawable.training_4)
                     }
                 }
+            }
+
+            binding.rlContainer.setOnClickListener {
+                onItemClickListener?.invoke(training)
             }
         }
     }

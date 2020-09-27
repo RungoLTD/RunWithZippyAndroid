@@ -18,6 +18,7 @@ class TrainingViewModel(
 
     var progressBar = MutableLiveData<Boolean>().apply { value = false }
     var trainings = trainingUseCase.trainings
+    var training = trainingUseCase.training
 
     fun getTrainings() {
         if (!trainings.value.isNullOrEmpty()) {

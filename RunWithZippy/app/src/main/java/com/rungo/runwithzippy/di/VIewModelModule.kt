@@ -1,6 +1,7 @@
 package com.rungo.runwithzippy.di
 
 import com.rungo.runwithzippy.presentation.features.challenge.ChallengeViewModel
+import com.rungo.runwithzippy.presentation.features.description.DescriptionViewModel
 import com.rungo.runwithzippy.presentation.features.login.LoginViewModel
 import com.rungo.runwithzippy.presentation.features.splash.SplashViewModel
 import com.rungo.runwithzippy.presentation.features.training.TrainingViewModel
@@ -13,4 +14,5 @@ val viewModelModule = module {
     viewModel { LoginViewModel(get(), get(), get()) }
     viewModel { ChallengeViewModel(get(), get()) }
     viewModel { TrainingViewModel(get(), get()) }
+    viewModel { DescriptionViewModel(get()) }
 }

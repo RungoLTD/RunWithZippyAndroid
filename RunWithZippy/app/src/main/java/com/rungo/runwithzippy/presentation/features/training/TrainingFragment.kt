@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.rungo.runwithzippy.R
 import com.rungo.runwithzippy.base.BaseFragment
 import com.rungo.runwithzippy.databinding.FragmentTrainingBinding
@@ -67,17 +68,10 @@ class TrainingFragment : BaseFragment() {
         })
     }
 
-    override fun onEvent(eventData: EventData) {
-        when (eventData.eventCode) {
-            EventEnums.SUCCESS -> {
-
-            }
-            EventEnums.FAIL -> {
-
-            }
-            EventEnums.OTHER -> {
-
-            }
+    override fun setupListeners() {
+        adapterRecommended.setItemClickListener {
+            viewModel.training.value = it
+            findNavController().navigate(R.id.descriptionFragment)
         }
     }
 }

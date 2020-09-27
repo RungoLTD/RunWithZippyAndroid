@@ -15,6 +15,8 @@ class GetTrainingUseCase constructor(
 
     var trainings = MutableLiveData<List<List<Training>>>().apply { value = null }
 
+    var training = MutableLiveData<Training>().apply { value = null }
+
     override suspend fun run(params: Any?): TrainingResponse {
         return trainingRepository.getTrainings(params as AccessTokenParam)
     }
