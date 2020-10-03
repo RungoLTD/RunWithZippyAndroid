@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/training_container">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_challenge"
+    app:startDestination="@id/challengeFragment">
 
+    <fragment
+        android:id="@+id/challengeFragment"
+        android:name="com.rungo.runwithzippy.presentation.features.challenge.ChallengeFragment" />
 </navigation>

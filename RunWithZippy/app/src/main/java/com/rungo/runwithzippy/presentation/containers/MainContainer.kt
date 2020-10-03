@@ -14,6 +14,7 @@ import com.rungo.runwithzippy.R
 import com.rungo.runwithzippy.base.BaseActivity
 import com.rungo.runwithzippy.databinding.ActivityMainContainerBinding
 import com.rungo.runwithzippy.utils.KeepStateNavigator
+import timber.log.Timber
 
 class MainContainer : BaseActivity(), DrawerLayout.DrawerListener {
 
@@ -36,16 +37,21 @@ class MainContainer : BaseActivity(), DrawerLayout.DrawerListener {
         navController = findNavController(R.id.mainContainer)
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.mainContainer)!!
         val navigator = KeepStateNavigator(this, navHostFragment.childFragmentManager, R.id.mainContainer)
+
         navController.navigatorProvider += navigator
         navController.setGraph(R.navigation.main)
         binding.navigation.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             when (destination.id) {
-                R.id.mainFragment, R.id.trainingFragment, R.id.challengeFragment -> binding.navigation.visibility = View.VISIBLE
+                R.id.navigation_main, R.id.navigation_training, R.id.navigation_challenge -> binding.navigation.visibility = View.VISIBLE
                 else -> binding.navigation.visibility = View.GONE
             }
+
+            Timber.d("CURRENT DESTINATION ID ${destination.id} ${R.id.mainFragment} ${R.id.mainContainer} ${R.id.navigation_main}")
+
         }
+
     }
 
     private fun setupListeners() {

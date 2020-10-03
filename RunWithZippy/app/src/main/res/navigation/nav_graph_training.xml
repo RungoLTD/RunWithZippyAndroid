@@ -2,10 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/challenge_container">
+    app:startDestination="@id/trainingFragment"
+    android:id="@+id/nav_graph_training">
 
     <fragment
-        android:id="@+id/descriptionFragment"
-        android:name="com.rungo.runwithzippy.presentation.features.description.DescriptionFragment"
-        tools:layout="@layout/fragment_description" />
+        android:id="@+id/trainingFragment"
+        android:name="com.rungo.runwithzippy.presentation.features.training.TrainingFragment"
+        />
 </navigation>

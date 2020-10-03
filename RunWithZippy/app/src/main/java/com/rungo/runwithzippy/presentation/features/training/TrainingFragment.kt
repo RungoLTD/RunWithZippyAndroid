@@ -1,5 +1,6 @@
 package com.rungo.runwithzippy.presentation.features.training
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,8 @@ import com.rungo.runwithzippy.R
 import com.rungo.runwithzippy.base.BaseFragment
 import com.rungo.runwithzippy.databinding.FragmentTrainingBinding
 import com.rungo.runwithzippy.presentation.containers.MainContainer
+import com.rungo.runwithzippy.presentation.features.description.DescriptionActivity
+import com.rungo.runwithzippy.presentation.features.description.DescriptionViewModel
 import com.rungo.runwithzippy.utils.EventData
 import com.rungo.runwithzippy.utils.EventEnums
 import com.rungo.runwithzippy.utils.extensions.isNetworkAvailable
@@ -71,7 +74,20 @@ class TrainingFragment : BaseFragment() {
     override fun setupListeners() {
         adapterRecommended.setItemClickListener {
             viewModel.training.value = it
-            findNavController().navigate(R.id.descriptionFragment)
+            val intent = Intent(requireActivity(), DescriptionActivity::class.java)
+            startActivity(intent)
+        }
+
+        adapterPopular.setItemClickListener {
+            viewModel.training.value = it
+            val intent = Intent(requireActivity(), DescriptionActivity::class.java)
+            startActivity(intent)
+        }
+
+        adapterMarathon.setItemClickListener {
+            viewModel.training.value = it
+            val intent = Intent(requireActivity(), DescriptionActivity::class.java)
+            startActivity(intent)
         }
     }
 }

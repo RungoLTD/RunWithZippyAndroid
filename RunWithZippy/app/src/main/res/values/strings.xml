@@ -41,4 +41,6 @@
 
     <string name="program_title">Программа</string>
     <string name="beginning">Начинаем</string>
+
+    <string name="transition_description">Описание</string>
 </resources>

@@ -3,21 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/navigation_main">
 
     <keep_state_fragment
-        android:id="@+id/mainFragment"
-        android:name="com.rungo.runwithzippy.presentation.features.main.MainFragment"
-        tools:layout="@layout/fragment_main" />
+        android:id="@+id/navigation_challenge"
+        android:name="com.rungo.runwithzippy.presentation.containers.ContainerChallengeFragment" />
 
     <keep_state_fragment
-        android:id="@+id/challengeFragment"
-        android:name="com.rungo.runwithzippy.presentation.features.challenge.ChallengeFragment"
-        tools:layout="@layout/fragment_challenges" />
+        android:id="@+id/navigation_main"
+        android:name="com.rungo.runwithzippy.presentation.containers.ContainerMainFragment" />
 
     <keep_state_fragment
-        android:id="@+id/trainingFragment"
-        android:name="com.rungo.runwithzippy.presentation.features.training.TrainingFragment"
-        tools:layout="@layout/fragment_training" />
+        android:id="@+id/navigation_training"
+        android:name="com.rungo.runwithzippy.presentation.containers.ContainerTrainingFragment" />
 
 </navigation>

@@ -13,10 +13,15 @@ import com.rungo.runwithzippy.utils.EnumTrainingName
 class MarathonAdapter : PagerAdapter() {
 
     private var list: List<Training> = emptyList()
+    private var onItemClickListener: ((Training) -> Unit)? = null
 
     fun setList(list: List<Training>) {
         this.list = list
         notifyDataSetChanged()
+    }
+
+    fun setItemClickListener(onItemClickListener: ((Training) -> Unit)) {
+        this.onItemClickListener = onItemClickListener
     }
 
     override fun isViewFromObject(view: View, any: Any): Boolean = view == any
@@ -29,6 +34,10 @@ class MarathonAdapter : PagerAdapter() {
         binding.tvTrainingName.text = list[position].title?.ru
         binding.tvDescription.text = list[position].description?.ru
         binding.ivEnableState.background = ContextCompat.getDrawable(container.context, R.drawable.training_4)
+
+        binding.rlContainer.setOnClickListener {
+            onItemClickListener?.invoke(list[position])
+        }
 
         container.addView(binding.root)
 
