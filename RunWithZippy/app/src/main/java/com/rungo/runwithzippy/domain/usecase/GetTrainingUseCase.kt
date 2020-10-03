@@ -3,6 +3,7 @@ package com.rungo.runwithzippy.domain.usecase
 import androidx.lifecycle.MutableLiveData
 import com.rungo.runwithzippy.base.BaseUseCase
 import com.rungo.runwithzippy.data.model.AccessTokenParam
+import com.rungo.runwithzippy.data.model.Options
 import com.rungo.runwithzippy.data.model.Training
 import com.rungo.runwithzippy.data.model.TrainingResponse
 import com.rungo.runwithzippy.data.remote.ApiErrorHandle
@@ -16,6 +17,8 @@ class GetTrainingUseCase constructor(
     var trainings = MutableLiveData<List<List<Training>>>().apply { value = null }
 
     var training = MutableLiveData<Training>().apply { value = null }
+
+    var options = MutableLiveData<List<Options>>().apply { value = null }
 
     override suspend fun run(params: Any?): TrainingResponse {
         return trainingRepository.getTrainings(params as AccessTokenParam)

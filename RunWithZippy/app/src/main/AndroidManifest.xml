@@ -31,6 +31,7 @@
         <activity android:name=".presentation.containers.LoginContainer" />
 
         <activity android:name=".presentation.features.description.DescriptionActivity" />
+        <activity android:name=".presentation.features.creationTraining.CreationTrainingActivity" />
     </application>
 
 </manifest>

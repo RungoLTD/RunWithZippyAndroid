@@ -43,4 +43,5 @@
     <string name="beginning">Начинаем</string>
 
     <string name="transition_description">Описание</string>
+    <string name="creation_training">Создание тренировки</string>
 </resources>
