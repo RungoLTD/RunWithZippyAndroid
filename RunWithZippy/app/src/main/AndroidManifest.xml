@@ -32,6 +32,7 @@
 
         <activity android:name=".presentation.features.description.DescriptionActivity" />
         <activity android:name=".presentation.features.creationTraining.CreationTrainingActivity" />
+        <activity android:name=".presentation.containers.RunningContainer" />
     </application>
 
 </manifest>

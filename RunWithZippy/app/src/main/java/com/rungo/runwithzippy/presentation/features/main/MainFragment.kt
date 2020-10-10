@@ -1,6 +1,7 @@
 package com.rungo.runwithzippy.presentation.features.main
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.PixelFormat
 import android.os.Bundle
 import android.util.DisplayMetrics
@@ -11,6 +12,7 @@ import com.esotericsoftware.spine.view.core.DisplayRenderParam
 import com.rungo.runwithzippy.R
 import com.rungo.runwithzippy.base.BaseFragment
 import com.rungo.runwithzippy.databinding.FragmentMainBinding
+import com.rungo.runwithzippy.presentation.containers.RunningContainer
 import com.rungo.runwithzippy.utils.animationModel.Zippy
 import com.rungo.runwithzippy.utils.animationModel.Zippy2
 import com.rungo.runwithzippy.utils.extensions.dip2px
@@ -26,7 +28,15 @@ class MainFragment : AndroidFragmentApplication() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentMainBinding.inflate(inflater, container, false)
         setupZippy()
+        setupListeners()
         return binding.root
+    }
+
+    private fun setupListeners() {
+        binding.btnStart.setOnClickListener {
+            val intent = Intent(requireActivity(), RunningContainer::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -55,7 +65,6 @@ class MainFragment : AndroidFragmentApplication() {
             glView.setZOrderMediaOverlay(false)
             glView.setZOrderOnTop(true)
         }
-
     }
 
     private fun addZippy() {
@@ -74,10 +83,4 @@ class MainFragment : AndroidFragmentApplication() {
         windowManager.defaultDisplay.getMetrics(outMetrics)
         return outMetrics.widthPixels
     }
-
-    override fun onPause() {
-        super.onPause()
-    }
-
-
 }

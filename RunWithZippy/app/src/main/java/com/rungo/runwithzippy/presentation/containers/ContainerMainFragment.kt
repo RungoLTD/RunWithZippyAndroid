@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.rungo.runwithzippy.base.BaseFragment
-import com.rungo.runwithzippy.databinding.ContainerFragmentChallengeBinding
 import com.rungo.runwithzippy.databinding.ContainerFragmentMainBinding
 
 class ContainerMainFragment: BaseFragment() {

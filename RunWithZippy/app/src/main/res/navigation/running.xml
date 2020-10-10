@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/running"
+    app:startDestination="@id/prepareFragment">
+
+    <fragment
+        android:id="@+id/prepareFragment"
+        android:name="com.rungo.runwithzippy.presentation.features.running.PrepareFragment" />
+</navigation>

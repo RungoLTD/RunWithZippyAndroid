@@ -8,7 +8,7 @@ import com.squareup.picasso.Picasso
 import timber.log.Timber
 
 fun Fragment.showToast(message: String) {
-    Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+    Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
 }
 
 fun EditText.text(): String {
