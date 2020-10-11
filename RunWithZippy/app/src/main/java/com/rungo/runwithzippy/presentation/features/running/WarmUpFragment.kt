@@ -1,5 +1,7 @@
 package com.rungo.runwithzippy.presentation.features.running
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.graphics.PixelFormat
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -7,8 +9,10 @@ import android.view.LayoutInflater
 import android.view.SurfaceView
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication
+import com.rungo.runwithzippy.R
 import com.rungo.runwithzippy.databinding.FragmentWarmUpBinding
 import com.rungo.runwithzippy.utils.animationModel.Zippy
 import com.rungo.runwithzippy.utils.extensions.dip2px
@@ -27,11 +31,7 @@ class WarmUpFragment : AndroidFragmentApplication() {
     private var time: Long? = null
     private var timer: CountDownTimer? = null
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentWarmUpBinding.inflate(inflater, container, false)
         setupZippy()
         setupListeners()
@@ -54,6 +54,10 @@ class WarmUpFragment : AndroidFragmentApplication() {
             time?.plus(20000)?.let { remainTime ->
                 setTimer(remainTime)
             }
+        }
+
+        binding.btnSkip.setOnClickListener {
+            showSkipDialog()
         }
     }
 
@@ -86,7 +90,7 @@ class WarmUpFragment : AndroidFragmentApplication() {
     private fun setTimer(seconds: Long) {
         timer = object : CountDownTimer(seconds, 1000) {
             override fun onFinish() {
-                //findNavController().navigate(screen)
+                findNavController().navigate(R.id.runningFragment)
             }
 
             override fun onTick(millisUntilFinished: Long) {
@@ -103,5 +107,24 @@ class WarmUpFragment : AndroidFragmentApplication() {
         }
 
         timer?.start()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        timer?.cancel()
+    }
+
+    private fun showSkipDialog() {
+        AlertDialog.Builder(requireContext())
+                .setMessage(R.string.skip_message)
+            .setPositiveButton(R.string.yes) { dialog, _ ->
+                findNavController().navigate(R.id.runningFragment)
+                dialog.dismiss()
+            }
+            .setNegativeButton(R.string.no) { dialog, _ ->
+                dialog.dismiss()
+            }
+            .create()
+            .show()
     }
 }

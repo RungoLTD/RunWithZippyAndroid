@@ -28,12 +28,6 @@ class RunningContainer : BaseActivity() {
     }
 
     override fun onBackPressed() {
-        binding.fragmentContainer.findNavController()
-            .addOnDestinationChangedListener { controller, destination, arguments ->
-                when (destination.id) {
-                    R.id.warmUpFragment -> finish()
-                    else -> super.onBackPressed()
-                }
-            }
+        finish()
     }
 }

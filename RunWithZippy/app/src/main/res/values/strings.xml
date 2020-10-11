@@ -53,4 +53,9 @@
     <string name="calories">Калории</string>
     <string name="time">Время</string>
     <string name="kilometers">Километры</string>
+
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+
+    <string name="skip_message">Вы действительно хотите пропустить разминку?</string>
 </resources>

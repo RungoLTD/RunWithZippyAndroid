@@ -15,15 +15,17 @@ class PrepareFragment : BaseFragment() {
 
     private lateinit var binding: FragmentPrepareBinding
 
+    private var timer: CountDownTimer? = null
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = binding(layoutInflater, R.layout.fragment_prepare, container)
         return binding.root
     }
 
     override fun onAfterViewCreated() {
-        val timer = object : CountDownTimer(4000, 1000) {
+        timer = object : CountDownTimer(4000, 1000) {
             override fun onFinish() {
-                //findNavController().navigate(screen)
+                findNavController().navigate(R.id.runningFragment)
             }
 
             override fun onTick(millisUntilFinished: Long) {
@@ -31,7 +33,7 @@ class PrepareFragment : BaseFragment() {
             }
         }
 
-        timer.start()
+        timer?.start()
     }
 
     override fun setupListeners() {
@@ -40,5 +42,10 @@ class PrepareFragment : BaseFragment() {
                 findNavController().navigate(R.id.warmUpFragment)
             }
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        timer?.cancel()
     }
 }
