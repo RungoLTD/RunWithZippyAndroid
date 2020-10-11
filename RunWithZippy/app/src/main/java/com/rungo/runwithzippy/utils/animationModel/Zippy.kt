@@ -42,7 +42,7 @@ class Zippy(private val context: Context, private val size: Float, private val p
         state = AnimationState(stateData) // Holds the animation state for a skeleton (current animation, time, etc).
         state?.timeScale = 1.0f // Slow all animations down to 50% speed.
 
-        state?.setAnimation(0, "03_hi", false)
+        state?.setAnimation(0, "03_hi", true)
     }
 
     override fun render() {
@@ -70,5 +70,6 @@ class Zippy(private val context: Context, private val size: Float, private val p
 
     fun setAnimate(animate: String) {
         state?.setAnimation(0, animate, false)
+        state?.addAnimation(0, "03_hi", true, 1f)
     }
 }

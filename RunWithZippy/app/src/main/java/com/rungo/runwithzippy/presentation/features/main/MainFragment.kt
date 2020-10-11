@@ -35,6 +35,16 @@ class MainFragment : AndroidFragmentApplication() {
             val intent = Intent(requireActivity(), RunningContainer::class.java)
             startActivity(intent)
         }
+
+        zippyView?.setOnTouchListener { view, motionEvent ->
+            val action = motionEvent.action
+
+            if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL) {
+                zippy?.setAnimate(AnimationEnum.PUNCH.animationName)
+            }
+
+            true
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -55,16 +65,6 @@ class MainFragment : AndroidFragmentApplication() {
             glView.holder.setFormat(PixelFormat.TRANSLUCENT)
             glView.setZOrderMediaOverlay(false)
             glView.setZOrderOnTop(true)
-
-           glView.setOnTouchListener { view, motionEvent ->
-               val action = motionEvent.action
-
-               if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL) {
-                   zippy?.setAnimate(AnimationEnum.PUNCH.animationName)
-               }
-
-               true
-           }
         }
     }
 
