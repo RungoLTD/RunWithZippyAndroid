@@ -41,7 +41,6 @@ class WarmUpFragment : AndroidFragmentApplication() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         addZippy()
-
         setTimer(31000)
     }
 
@@ -63,7 +62,7 @@ class WarmUpFragment : AndroidFragmentApplication() {
 
     private fun setupZippy() {
         cfg.r = 8.also { cfg.a = it }.also { cfg.b = it }.also { cfg.g = it }
-        zippy = Zippy(requireContext(), 0.4f, (getScreenWidth(requireContext()) / 3).toFloat())
+        zippy = Zippy(requireContext(), 0.4f, (getScreenWidth(requireContext()) / 3).toFloat(), 0.0f)
 
         if (zippyView == null) {
             zippyView = initializeForView(zippy, cfg)
@@ -116,7 +115,8 @@ class WarmUpFragment : AndroidFragmentApplication() {
 
     private fun showSkipDialog() {
         AlertDialog.Builder(requireContext())
-                .setMessage(R.string.skip_message)
+            .setMessage(R.string.skip_message)
+            .setCancelable(false)
             .setPositiveButton(R.string.yes) { dialog, _ ->
                 findNavController().navigate(R.id.runningFragment)
                 dialog.dismiss()

@@ -3,17 +3,17 @@ package com.rungo.runwithzippy.presentation.features.main
 import android.content.Intent
 import android.graphics.PixelFormat
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.SurfaceView
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.Toast
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication
 import com.rungo.runwithzippy.databinding.FragmentMainBinding
 import com.rungo.runwithzippy.presentation.containers.RunningContainer
+import com.rungo.runwithzippy.utils.AnimationEnum
 import com.rungo.runwithzippy.utils.animationModel.Zippy
 import com.rungo.runwithzippy.utils.extensions.dip2px
 import com.rungo.runwithzippy.utils.extensions.getScreenWidth
+import com.rungo.runwithzippy.utils.extensions.showToast
 
 class MainFragment : AndroidFragmentApplication() {
 
@@ -44,7 +44,7 @@ class MainFragment : AndroidFragmentApplication() {
 
     private fun setupZippy() {
         cfg.r = 8.also { cfg.a = it }.also { cfg.b = it }.also { cfg.g = it }
-        zippy = Zippy(requireContext(), 0.5f, (getScreenWidth(requireContext()) / 4).toFloat())
+        zippy = Zippy(requireContext(), 0.5f, getScreenWidth(requireContext()) / 24.0f, 0.0f)
 
         if (zippyView == null) {
            zippyView = initializeForView(zippy, cfg)
@@ -55,6 +55,16 @@ class MainFragment : AndroidFragmentApplication() {
             glView.holder.setFormat(PixelFormat.TRANSLUCENT)
             glView.setZOrderMediaOverlay(false)
             glView.setZOrderOnTop(true)
+
+           glView.setOnTouchListener { view, motionEvent ->
+               val action = motionEvent.action
+
+               if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL) {
+                   zippy?.setAnimate(AnimationEnum.PUNCH.animationName)
+               }
+
+               true
+           }
         }
     }
 
@@ -63,8 +73,6 @@ class MainFragment : AndroidFragmentApplication() {
             (it as ViewGroup).removeView(zippyView)
         }
         binding.rlZippy.addView(
-            zippyView,
-            ViewGroup.LayoutParams(getScreenWidth(requireContext()), dip2px(400F, requireContext()))
-        )
+            zippyView, ViewGroup.LayoutParams(getScreenWidth(requireContext()), getScreenWidth(requireContext())))
     }
 }

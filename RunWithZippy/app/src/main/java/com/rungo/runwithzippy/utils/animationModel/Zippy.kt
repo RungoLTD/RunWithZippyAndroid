@@ -8,9 +8,10 @@ import com.badlogic.gdx.graphics.OrthographicCamera
 import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch
 import com.badlogic.gdx.graphics.g2d.TextureAtlas
 import com.esotericsoftware.spine.*
+import com.rungo.runwithzippy.utils.AnimationEnum
 import com.rungo.runwithzippy.utils.extensions.getScreenWidth
 
-class Zippy(private val context: Context, private val size: Float, private val positionX: Float) : ApplicationAdapter() {
+class Zippy(private val context: Context, private val size: Float, private val positionX: Float, private val positionY: Float) : ApplicationAdapter() {
 
     private val camera: OrthographicCamera by lazy { OrthographicCamera() }
     private val batch: PolygonSpriteBatch by lazy { PolygonSpriteBatch() }
@@ -30,22 +31,18 @@ class Zippy(private val context: Context, private val size: Float, private val p
         }
 
         atlas = TextureAtlas(Gdx.files.internal("coma/coma.atlas"))
-        json = SkeletonJson(atlas) // This loads skeleton JSON data, which is stateless.
-        json?.scale = size // Load the skeleton at 60% the size it was in Spine.
+        json = SkeletonJson(atlas)
+        json?.scale = size
         val skeletonData = json?.readSkeletonData(Gdx.files.internal("coma/coma.json"))
-        skeleton =
-            Skeleton(skeletonData) // Skeleton holds skeleton state (bone positions, slot attachments, etc).
-        skeleton?.setPosition(positionX, 0f)
+        skeleton = Skeleton(skeletonData)
+        skeleton?.setPosition(positionX, positionY)
 
-        val stateData =
-            AnimationStateData(skeletonData) // Defines mixing (crossfading) between animations.
+        val stateData = AnimationStateData(skeletonData) // Defines mixing (crossfading) between animations.
 //        stateData.setMix(AnimationEnum.BREATHES.animationName, "03_hi", 0.2f)
-        state =
-            AnimationState(stateData) // Holds the animation state for a skeleton (current animation, time, etc).
+        state = AnimationState(stateData) // Holds the animation state for a skeleton (current animation, time, etc).
         state?.timeScale = 1.0f // Slow all animations down to 50% speed.
 
         state?.setAnimation(0, "03_hi", false)
-        state?.addAnimation(0, "03_hi", true, 10f) // Run after the jump.
     }
 
     override fun render() {
@@ -71,7 +68,7 @@ class Zippy(private val context: Context, private val size: Float, private val p
         atlas?.dispose()
     }
 
-    fun setAnimate(animate: String?) {
-        state?.addAnimation(0, animate, true, 0f)
+    fun setAnimate(animate: String) {
+        state?.setAnimation(0, animate, false)
     }
 }

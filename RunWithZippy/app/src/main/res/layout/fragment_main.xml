@@ -21,9 +21,10 @@
 
         <RelativeLayout
             android:id="@+id/rlZippy"
-            android:layout_below="@id/tvDistance"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_300sdp">
+            android:layout_centerVertical="true"
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="@dimen/_240sdp"
+            android:layout_centerHorizontal="true">
 
             <ImageView
                 android:layout_width="wrap_content"
