@@ -12,4 +12,6 @@
     <color name="colorBlack">#242424</color>
 
     <color name="colorGrayLight">#F2F2F2</color>
+
+    <color name="colorBlackTransparency">#7F242424</color>
 </resources>

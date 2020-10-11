@@ -3,6 +3,7 @@ package com.rungo.runwithzippy.presentation.containers
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import com.rungo.runwithzippy.R
 import com.rungo.runwithzippy.base.BaseActivity
 import com.rungo.runwithzippy.databinding.ActivityRunningContainerBinding
@@ -26,4 +27,13 @@ class RunningContainer : BaseActivity() {
 
     }
 
+    override fun onBackPressed() {
+        binding.fragmentContainer.findNavController()
+            .addOnDestinationChangedListener { controller, destination, arguments ->
+                when (destination.id) {
+                    R.id.warmUpFragment -> finish()
+                    else -> super.onBackPressed()
+                }
+            }
+    }
 }

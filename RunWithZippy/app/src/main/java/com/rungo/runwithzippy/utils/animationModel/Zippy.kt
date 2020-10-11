@@ -10,7 +10,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas
 import com.esotericsoftware.spine.*
 import com.rungo.runwithzippy.utils.extensions.getScreenWidth
 
-class Zippy(private val context: Context) : ApplicationAdapter() {
+class Zippy(private val context: Context, private val size: Float, private val positionX: Float) : ApplicationAdapter() {
 
     private val camera: OrthographicCamera by lazy { OrthographicCamera() }
     private val batch: PolygonSpriteBatch by lazy { PolygonSpriteBatch() }
@@ -31,13 +31,17 @@ class Zippy(private val context: Context) : ApplicationAdapter() {
 
         atlas = TextureAtlas(Gdx.files.internal("coma/coma.atlas"))
         json = SkeletonJson(atlas) // This loads skeleton JSON data, which is stateless.
-        json?.scale = 0.5f // Load the skeleton at 60% the size it was in Spine.
+        json?.scale = size // Load the skeleton at 60% the size it was in Spine.
         val skeletonData = json?.readSkeletonData(Gdx.files.internal("coma/coma.json"))
-        skeleton = Skeleton(skeletonData) // Skeleton holds skeleton state (bone positions, slot attachments, etc).
-        skeleton?.setPosition((getScreenWidth(context) / 4).toFloat(), 0f)
-        val stateData = AnimationStateData(skeletonData) // Defines mixing (crossfading) between animations.
+        skeleton =
+            Skeleton(skeletonData) // Skeleton holds skeleton state (bone positions, slot attachments, etc).
+        skeleton?.setPosition(positionX, 0f)
+
+        val stateData =
+            AnimationStateData(skeletonData) // Defines mixing (crossfading) between animations.
 //        stateData.setMix(AnimationEnum.BREATHES.animationName, "03_hi", 0.2f)
-        state = AnimationState(stateData) // Holds the animation state for a skeleton (current animation, time, etc).
+        state =
+            AnimationState(stateData) // Holds the animation state for a skeleton (current animation, time, etc).
         state?.timeScale = 1.0f // Slow all animations down to 50% speed.
 
         state?.setAnimation(0, "03_hi", false)
@@ -69,13 +73,5 @@ class Zippy(private val context: Context) : ApplicationAdapter() {
 
     fun setAnimate(animate: String?) {
         state?.addAnimation(0, animate, true, 0f)
-    }
-
-    fun zoomBig() {
-        camera.zoom = 0.5f
-    }
-
-    fun zoomSmall() {
-        camera.zoom = 1f
     }
 }

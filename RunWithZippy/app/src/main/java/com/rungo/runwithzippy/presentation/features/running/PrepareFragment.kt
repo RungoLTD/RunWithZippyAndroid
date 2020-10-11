@@ -15,8 +15,6 @@ class PrepareFragment : BaseFragment() {
 
     private lateinit var binding: FragmentPrepareBinding
 
-    private val viewModel by lazy { getViewModel<RunningViewModel>() }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = binding(layoutInflater, R.layout.fragment_prepare, container)
         return binding.root
@@ -25,7 +23,7 @@ class PrepareFragment : BaseFragment() {
     override fun onAfterViewCreated() {
         val timer = object : CountDownTimer(4000, 1000) {
             override fun onFinish() {
-                findNavController().navigate(screen)
+                //findNavController().navigate(screen)
             }
 
             override fun onTick(millisUntilFinished: Long) {
@@ -39,9 +37,7 @@ class PrepareFragment : BaseFragment() {
     override fun setupListeners() {
         binding.switchWarm.setOnCheckedChangeListener { compoundButton, isChecked ->
             if (isChecked) {
-                findNavController().navigate(screen)
-            } else {
-                findNavController().navigate(screen)
+                findNavController().navigate(R.id.warmUpFragment)
             }
         }
     }

@@ -44,4 +44,13 @@
 
     <string name="transition_description">Описание</string>
     <string name="creation_training">Создание тренировки</string>
+
+    <string name="warm_up_title">Идет разминка</string>
+    <string name="seconds_up">+ 20 сек</string>
+    <string name="skip">Пропустить</string>
+
+    <string name="middle_temp">Средний темп</string>
+    <string name="calories">Калории</string>
+    <string name="time">Время</string>
+    <string name="kilometers">Километры</string>
 </resources>

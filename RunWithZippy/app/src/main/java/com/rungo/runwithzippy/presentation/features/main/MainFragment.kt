@@ -1,21 +1,19 @@
 package com.rungo.runwithzippy.presentation.features.main
 
-import android.content.Context
 import android.content.Intent
 import android.graphics.PixelFormat
 import android.os.Bundle
-import android.util.DisplayMetrics
-import android.view.*
+import android.view.LayoutInflater
+import android.view.SurfaceView
+import android.view.View
+import android.view.ViewGroup
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication
-import com.esotericsoftware.spine.view.core.DisplayRenderParam
-import com.rungo.runwithzippy.R
-import com.rungo.runwithzippy.base.BaseFragment
 import com.rungo.runwithzippy.databinding.FragmentMainBinding
 import com.rungo.runwithzippy.presentation.containers.RunningContainer
 import com.rungo.runwithzippy.utils.animationModel.Zippy
-import com.rungo.runwithzippy.utils.animationModel.Zippy2
 import com.rungo.runwithzippy.utils.extensions.dip2px
+import com.rungo.runwithzippy.utils.extensions.getScreenWidth
 
 class MainFragment : AndroidFragmentApplication() {
 
@@ -46,14 +44,7 @@ class MainFragment : AndroidFragmentApplication() {
 
     private fun setupZippy() {
         cfg.r = 8.also { cfg.a = it }.also { cfg.b = it }.also { cfg.g = it }
-        zippy = Zippy(requireContext())
-
-        val displayRenderParam = DisplayRenderParam()
-        displayRenderParam.speed = 0.3f
-        displayRenderParam.scaleX = 0.3f
-        displayRenderParam.scaleY = 0.3f
-        displayRenderParam.defaultMix = 0.37f
-        //zippy?.renderParam = displayRenderParam
+        zippy = Zippy(requireContext(), 0.5f, (getScreenWidth(requireContext()) / 4).toFloat())
 
         if (zippyView == null) {
            zippyView = initializeForView(zippy, cfg)
@@ -73,14 +64,7 @@ class MainFragment : AndroidFragmentApplication() {
         }
         binding.rlZippy.addView(
             zippyView,
-            ViewGroup.LayoutParams(getScreenWidth(), dip2px(400F, requireContext()))
+            ViewGroup.LayoutParams(getScreenWidth(requireContext()), dip2px(400F, requireContext()))
         )
-    }
-
-    private fun getScreenWidth(): Int {
-        val windowManager = requireActivity().getSystemService(Context.WINDOW_SERVICE) as WindowManager
-        val outMetrics = DisplayMetrics()
-        windowManager.defaultDisplay.getMetrics(outMetrics)
-        return outMetrics.widthPixels
     }
 }

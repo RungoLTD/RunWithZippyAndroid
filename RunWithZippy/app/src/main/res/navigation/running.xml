@@ -6,4 +6,12 @@
     <fragment
         android:id="@+id/prepareFragment"
         android:name="com.rungo.runwithzippy.presentation.features.running.PrepareFragment" />
+
+    <fragment
+        android:id="@+id/warmUpFragment"
+        android:name="com.rungo.runwithzippy.presentation.features.running.WarmUpFragment" />
+
+    <fragment
+        android:id="@+id/runningFragment"
+        android:name="com.rungo.runwithzippy.presentation.features.running.RunningFragment" />
 </navigation>
