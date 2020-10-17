@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/running"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/running"
     app:startDestination="@id/prepareFragment">
 
     <fragment
@@ -14,4 +15,8 @@
     <fragment
         android:id="@+id/runningFragment"
         android:name="com.rungo.runwithzippy.presentation.features.running.RunningFragment" />
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.rungo.runwithzippy.presentation.features.running.MapFragment" />
 </navigation>
