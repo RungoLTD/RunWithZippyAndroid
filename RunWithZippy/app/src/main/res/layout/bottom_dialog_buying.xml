@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_description">
+
+        <ImageView
+            android:id="@+id/ivTop"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_4sdp"
+            android:src="@drawable/ic_bottom_dialog_top"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_below="@id/ivTop"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:src="@drawable/ic_logo_title"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_below="@id/ivLogo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_14ssp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:layout_marginHorizontal="@dimen/_26sdp"
+            android:text="@string/buying_title"/>
+
+        <LinearLayout
+            android:layout_below="@id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp">
+
+                <TextView
+                    android:id="@+id/tvTitle1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12ssp"
+                    android:text="@string/training_title_1"/>
+
+                <TextView
+                    android:id="@+id/tvPrice1"
+                    android:layout_below="@id/tvTitle1"
+                    android:layout_width="wrap_content"
+                    android:textSize="@dimen/_10ssp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/training_price_1"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_10ssp"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:layout_marginHorizontal="@dimen/_26sdp"
+                android:text="@string/training_title_2"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

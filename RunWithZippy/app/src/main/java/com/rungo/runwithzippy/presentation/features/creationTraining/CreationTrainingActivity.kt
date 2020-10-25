@@ -37,6 +37,10 @@ class CreationTrainingActivity : BaseActivity() {
         adapter.setItemClickListener {
             moveNext()
         }
+
+        adapter.setOnBackClickListener {
+            onBackPressed()
+        }
     }
 
     override fun exit() {

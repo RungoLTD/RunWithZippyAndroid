@@ -17,16 +17,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_200sdp"
                 android:visibility="gone"
-                android:animateLayoutChanges="true"
-                android:background="@android:color/white">
+                android:animateLayoutChanges="true">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/_36ssp"
-                    android:layout_centerInParent="true"
-                    android:text="FUCKING WORLD"/>
+                <fragment
+                    class="com.here.android.mpa.mapping.AndroidXMapFragment"
+                    android:id="@+id/mapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
 
             </RelativeLayout>
 

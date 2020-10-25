@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "629902938629",
+    "firebase_url": "https://run-with-zippy.firebaseio.com",
+    "project_id": "run-with-zippy",
+    "storage_bucket": "run-with-zippy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629902938629:android:973fc78e52b7d171fe826c",
+        "android_client_info": {
+          "package_name": "com.rungo.runwithzippy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "629902938629-l5ac6ujh8q9b0uecrgi08nc6tcjj8hte.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rungo.runwithzippy",
+            "certificate_hash": "cf0ed1e27c242e9619054eaec75d1140e35b348e"
+          }
+        },
+        {
+          "client_id": "629902938629-ciu8s4k64l8520lclrbuu71q4nngtgp8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0C7_lxCBaRP_PjPJPTk6OcKyMcOgcMeM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "629902938629-ciu8s4k64l8520lclrbuu71q4nngtgp8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

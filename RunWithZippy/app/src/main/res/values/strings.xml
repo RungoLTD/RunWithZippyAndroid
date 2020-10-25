@@ -58,4 +58,16 @@
     <string name="no">Нет</string>
 
     <string name="skip_message">Вы действительно хотите пропустить разминку?</string>
+    <string name="turn_on_geolocation">Для того чтобы начать тренировку нужно включить доступ к геолокации</string>
+    <string name="map_error">Не удалось инициализировать карту</string>
+    
+    <string name="buying_title">Программа бега, созданная для тебя. Начни бегать вместе с нами!</string>
+    <string name="buying_select">Выберите программу</string>
+
+    <string name="training_title_1">7 дней в подарок</string>
+    <string name="training_title_2">Подписка на год</string>
+
+    <string name="training_price_1">Потом за 249 руб/мес</string>
+    <string name="training_price_2">1 249 руб/год</string>
+
 </resources>

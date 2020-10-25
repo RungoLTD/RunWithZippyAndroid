@@ -12,6 +12,7 @@ class CreationTrainingAdapter : PagerAdapter() {
 
     private var list: List<Options> = listOf()
     private var onItemClickListener: (() -> Unit)? = null
+    private var onBackClickListener: (() -> Unit)? = null
 
     fun setList(list: List<Options>) {
         this.list = list
@@ -20,6 +21,10 @@ class CreationTrainingAdapter : PagerAdapter() {
 
     fun setItemClickListener(onItemClickListener: (() -> Unit)) {
         this.onItemClickListener = onItemClickListener
+    }
+
+    fun setOnBackClickListener(onBackClickListener: (() -> Unit)) {
+        this.onBackClickListener = onBackClickListener
     }
 
     override fun isViewFromObject(view: View, `object`: Any): Boolean {
@@ -37,6 +42,10 @@ class CreationTrainingAdapter : PagerAdapter() {
         adapter.setList(list[position].options)
         adapter.setItemClickListener {
             onItemClickListener?.invoke()
+        }
+
+        binding.ivBack.setOnClickListener {
+            onBackClickListener?.invoke()
         }
 
         container.addView(binding.root)
