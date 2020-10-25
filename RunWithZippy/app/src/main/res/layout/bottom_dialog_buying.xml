@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
+        app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_description">
@@ -36,12 +37,15 @@
             android:text="@string/buying_title"/>
 
         <LinearLayout
+            android:id="@+id/llTraining"
             android:layout_below="@id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_38sdp"
             android:orientation="vertical">
 
             <RelativeLayout
+                android:id="@+id/rlTraining1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_16sdp">
@@ -64,21 +68,77 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    app:tint="@color/colorBlack"
+                    android:src="@drawable/ic_arrow_forward"/>
             </RelativeLayout>
 
-
-            <TextView
+            <RelativeLayout
+                android:id="@+id/rlTraining2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/_10ssp"
-                android:gravity="center"
-                android:layout_marginTop="@dimen/_18sdp"
-                android:layout_marginHorizontal="@dimen/_26sdp"
-                android:text="@string/training_title_2"/>
+                android:layout_marginTop="@dimen/_24sdp"
+                android:visibility="gone"
+                android:layout_marginHorizontal="@dimen/_16sdp">
+
+                <TextView
+                    android:id="@+id/tvTitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12ssp"
+                    android:text="@string/training_title_2"/>
+
+                <TextView
+                    android:id="@+id/tvPrice2"
+                    android:layout_below="@id/tvTitle2"
+                    android:layout_width="wrap_content"
+                    android:textSize="@dimen/_10ssp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/training_price_2"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    app:tint="@color/colorBlack"
+                    android:src="@drawable/ic_arrow_forward"/>
+            </RelativeLayout>
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnBuy"
+            style="@style/ButtonStyle"
+            android:layout_below="@id/llTraining"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:textAllCaps="false"
+            android:text="@string/trial_free" />
+
+        <TextView
+            android:id="@+id/tvRestore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnBuy"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/training_restore"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvRestore"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/colorGray"
+            android:layout_marginBottom="@dimen/_38sdp"
+            android:layout_marginTop="@dimen/_38sdp"
+            android:text="@string/accept_rules"/>
 
     </RelativeLayout>
 </layout>

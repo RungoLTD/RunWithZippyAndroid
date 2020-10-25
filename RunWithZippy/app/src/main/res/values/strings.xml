@@ -69,5 +69,8 @@
 
     <string name="training_price_1">Потом за 249 руб/мес</string>
     <string name="training_price_2">1 249 руб/год</string>
+    <string name="training_restore">Восстановить покупки</string>
 
+    <string name="trial_free">Попробовать бесплатно</string>
+    <string name="accept_rules">Принимаю условия подписки </string>
 </resources>

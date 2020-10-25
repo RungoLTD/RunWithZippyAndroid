@@ -1,11 +1,14 @@
 package com.rungo.runwithzippy.presentation.features.creationTraining
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import androidx.lifecycle.Observer
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.rungo.runwithzippy.R
 import com.rungo.runwithzippy.base.BaseActivity
 import com.rungo.runwithzippy.databinding.ActivityCreationTrainingBinding
+import com.rungo.runwithzippy.databinding.BottomDialogBuyingBinding
 import org.koin.android.viewmodel.ext.android.getViewModel
 
 class CreationTrainingActivity : BaseActivity() {
@@ -15,6 +18,10 @@ class CreationTrainingActivity : BaseActivity() {
     private val adapter by lazy { CreationTrainingAdapter() }
 
     private val viewModel by lazy { getViewModel<CreationTrainingViewModel>() }
+
+    private val bottomSheetDialog by lazy { BottomSheetDialog(this) }
+    private val dialogBinding by lazy { BottomDialogBuyingBinding.inflate(LayoutInflater.from(this), null, false) }
+    private var listCount: Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,13 +36,18 @@ class CreationTrainingActivity : BaseActivity() {
         viewModel.options.observe(this, Observer {
             it?.let {
                 adapter.setList(it)
+                listCount = it.size
             }
         })
     }
 
     private fun setupListeners() {
         adapter.setItemClickListener {
-            moveNext()
+            if (binding.vpFragment.currentItem == listCount - 1) {
+                showBottomDialog()
+            } else {
+                moveNext()
+            }
         }
 
         adapter.setOnBackClickListener {
@@ -61,5 +73,10 @@ class CreationTrainingActivity : BaseActivity() {
         } else {
             super.onBackPressed()
         }
+    }
+
+    private fun showBottomDialog() {
+        bottomSheetDialog.setContentView(dialogBinding.root)
+        bottomSheetDialog.show()
     }
 }
