@@ -1,31 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:gravity="bottom"
-    android:background="@color/colorPrimary"
-    android:padding="16dp"
-    android:layout_height="150dp">
+    android:layout_width="match_parent"
+    android:layout_height="154dp">
 
-    <LinearLayout
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivProfile"
+        android:layout_width="@dimen/_64sdp"
+        android:layout_height="@dimen/_64sdp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/ic_profile"
+        app:shapeAppearanceOverlay="@style/circleImageView" />
+
+    <TextView
+        android:id="@+id/tvName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_alignTop="@id/ivProfile"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@id/ivProfile"
+        android:text="@string/profile_title"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txtName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="Firstname Lastname"
-            android:textColor="@android:color/white"/>
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvName"
+        android:layout_alignStart="@id/tvName"
+        android:text="@string/profile_subtitle"
+        android:textColor="@color/colorGrayMenu" />
 
-        <TextView
-            android:id="@+id/txtPhone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            tools:text="+# (###) ### ## ##"
-            android:textColor="@android:color/white"/>
-    </LinearLayout>
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorGrayLight" />
 </RelativeLayout>

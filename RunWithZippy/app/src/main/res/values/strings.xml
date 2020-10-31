@@ -26,6 +26,8 @@
     <string name="menu_skins">Скины</string>
     <string name="menu_training">Тренировка</string>
     <string name="menu_challenges">Челлендж</string>
+    <string name="menu_training_list">Журнал тренировок</string>
+    <string name="menu_achievement">Мои достижения</string>
 
     <string name="coin">99999999</string>
     <string name="no_connection">ОТСУТСТВУЕТ ИНТЕРНЕТ-СОЕДИНЕНИЕ</string>
@@ -73,4 +75,7 @@
 
     <string name="trial_free">Попробовать бесплатно</string>
     <string name="accept_rules">Принимаю условия подписки </string>
+
+    <string name="profile_subtitle">Перейти в профиль</string>
+    <string name="profile_title">Ваше имя</string>
 </resources>

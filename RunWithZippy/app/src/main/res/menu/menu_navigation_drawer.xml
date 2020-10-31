@@ -2,22 +2,32 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/menu_main"
-        android:title="@string/menu_main"/>
+        android:id="@+id/menu_training_log"
+        android:title="@string/menu_training_list"
+        android:icon="@drawable/ic_menu_training_log"/>
 
     <item
         android:id="@+id/menu_friends"
-        android:title="@string/menu_friends"/>
+        android:title="@string/menu_friends"
+        android:icon="@drawable/ic_menu_friends" />
 
     <item
         android:id="@+id/menu_skins"
-        android:title="@string/menu_skins"/>
+        android:title="@string/menu_skins"
+        android:icon="@drawable/ic_menu_skins"/>
 
     <item
         android:id="@+id/menu_training"
-        android:title="@string/menu_training"/>
+        android:title="@string/menu_training"
+        android:icon="@drawable/ic_menu_training_log" />
+
+    <item
+        android:id="@+id/menu_achievement"
+        android:title="@string/menu_achievement"
+        android:icon="@drawable/ic_menu_achievement"/>
 
     <item
         android:id="@+id/menu_challenges"
-        android:title="@string/menu_challenges"/>
+        android:title="@string/menu_challenges"
+        android:icon="@drawable/ic_menu_challenge"/>
 </menu>
