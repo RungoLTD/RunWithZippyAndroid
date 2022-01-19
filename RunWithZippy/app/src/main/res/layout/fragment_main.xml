@@ -8,16 +8,34 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tvDistance"
+        <RelativeLayout
+            android:id="@+id/rlSteps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/_50ssp"
-            android:textColor="@android:color/black"
-            android:textStyle="bold|italic"
-            android:layout_marginTop="@dimen/_36sdp"
-            android:layout_centerHorizontal="true"
-            android:text="40,3"/>
+            android:layout_centerHorizontal="true">
+            <TextView
+                android:id="@+id/tvSteps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_40ssp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold|italic"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_centerHorizontal="true"
+                android:text="0 шаги"/>
+
+            <TextView
+                android:id="@+id/tvDistance"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_40ssp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold|italic"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_centerHorizontal="true"
+                android:text="0 km"/>
+        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/rlZippy"
@@ -38,7 +56,7 @@
         <Button
             android:id="@+id/btnStart"
             android:layout_width="@dimen/_140sdp"
-            android:layout_height="@dimen/_60sdp"
+            android:layout_height="@dimen/_50sdp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/_28sdp"
@@ -49,6 +67,7 @@
             android:textStyle="italic" />
 
         <ImageView
+            android:id="@+id/btn_img_music_apps"
             android:layout_width="@dimen/_24sdp"
             android:layout_height="@dimen/_24sdp"
             android:layout_alignParentEnd="true"
@@ -61,6 +80,7 @@
             android:src="@drawable/ic_music_player" />
 
         <ImageView
+            android:id="@+id/btn_img_settings"
             android:layout_width="@dimen/_28sdp"
             android:layout_height="@dimen/_28sdp"
             android:layout_alignParentBottom="true"
@@ -70,6 +90,16 @@
             android:clickable="true"
             android:focusable="true"
             android:src="@drawable/ic_settings" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_12sdp"
+            android:layout_height="@dimen/_250sdp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="left"
+            android:progressDrawable="@drawable/progressbar_states" />
 
     </RelativeLayout>
 </layout>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.features.running.RuniingStatisticViewFragment">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="0dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:paddingStart="6dp"
+                android:paddingEnd="16dp"
+                app:contentInsetStartWithNavigation="0dp"
+                app:navigationIcon="@drawable/ic_back_button" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="4"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3">
+
+                <fragment
+                    android:id="@+id/running_stat_mapGoogleFragment"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_12sdp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Общая информация"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Дистанция" />
+
+                        <TextView
+                            android:id="@+id/tv_running_stat_distance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="1"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvFinishDistanceKm"
+                            android:layout_marginTop="@dimen/_15ssp"
+                            android:text="Ср. темп" />
+
+                        <TextView
+                            android:id="@+id/tv_running_stat_avg_pace"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="0"
+                            android:textColor="@android:color/black" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Время" />
+
+                        <TextView
+                            android:id="@+id/tv_running_stat_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignStart="@id/tvMyTrainingTotal"
+                            android:layout_alignEnd="@id/tvMyTrainingTotal"
+                            android:gravity="center_horizontal"
+                            android:text="1"
+                            android:textColor="@android:color/black" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvFinishDistanceKm"
+                            android:layout_marginTop="@dimen/_15ssp"
+                            android:text="Ср. скорость" />
+
+                        <TextView
+                            android:id="@+id/tv_running_stat_avg_speed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignStart="@id/tvMyTrainingTemp"
+                            android:layout_alignEnd="@id/tvMyTrainingTemp"
+                            android:gravity="center_horizontal"
+                            android:text="0"
+                            android:textColor="@android:color/black" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Сожжено" />
+
+                        <TextView
+                            android:id="@+id/tv_running_stat_calories"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignStart="@id/tvMyTrainingTotal"
+                            android:layout_alignEnd="@id/tvMyTrainingTotal"
+                            android:gravity="center_horizontal"
+                            android:text="0 Ккал"
+                            android:textColor="@android:color/black" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvFinishDistanceKm"
+                            android:layout_marginTop="@dimen/_15ssp"
+                            android:text="Шаги" />
+
+                        <TextView
+                            android:id="@+id/tv_running_stat_step"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignStart="@id/tvMyTrainingTemp"
+                            android:layout_alignEnd="@id/tvMyTrainingTemp"
+                            android:gravity="center_horizontal"
+                            android:text="0"
+                            android:textColor="@android:color/black" />
+
+                    </LinearLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </FrameLayout>
+</layout>

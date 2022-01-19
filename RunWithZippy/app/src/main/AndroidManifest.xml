@@ -5,8 +5,13 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
 
     <application
         android:name=".App"
@@ -17,8 +22,73 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
+        <activity
+            android:name=".presentation.features.profile.ProfileActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.features.running.RunningFinishActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.containers.RegistrationContainer"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
 
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2530294564111476~9940352785" />
+        <!--   ca-app-pub-2530294564111476~9940352785
+        ca-app-pub-2530294564111476~9940352785
+         ca-app-pub-2530294564111476/3573554280
+         -->
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+
+        <meta-data
+            android:name="com.google.android.gms.wallet.api.enabled"
+            android:value="true" />
+
+        <service
+            android:name=".data.fcm.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!--        <service android:name=".data.services.GpsTrackerService" /> &lt;!&ndash; <meta-data &ndash;&gt;-->
+        <!-- android:name="com.google.android.maps.v2.API_KEY" -->
+        <!-- android:value="AIzaSyBa8EnQsTiST98v_xGsqpX54oPrtzdgYy8" /> -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDGEnJHXzgi6UXlD4NoIR9El_dIcEHQJ-0" />
         <meta-data
             android:name="com.here.android.maps.appid"
             android:value="DKjBz3QswTOJO8pCeu9u" />
@@ -29,22 +99,63 @@
             android:name="com.here.android.maps.license.key"
             android:value="BHJnJL9XS8PaFdJAayopAkZTbcuQ4AJhTbxAEkyyaYGTht4ccuTGf6/SvcwVagwvvwzTOQGvr7/8dNU5QXgght7jzLM0qLFR+8IRl0hTq166Q/GnMKMHXDEsVhCr1WZQn104QRL6PqvPSfK2B7flZgpXlbUwdS4P4Tt+eEpeZ9V2yi94lE254Z9qpOYGOjx7H2hSFq/FQ1sJfUlBKhlGF0eTb5oQ4MyXhOWQ5Nu5V03fmgiH2ts1LuPgbxJoO3IrGqONzc2bqJ7dZUgF5vrnWK8sLpQUTHuvDaXaCsZPI2S+UySyug+xw/7tY1P+WtF0beolJCorkQpSD+iMmG7OqqwDr0RA035VFMwP7Dsd74YLjHC+/3nFodaqYpjljw57eRo5tJV3dIuWA4jRJWK2OLJrk+F1NrY472Ghd3T+gmJy6iu5UXlMYxPHqPIP9n1k8Qk8ALao+uhP18w9P6LjUl6q1SDF4IAOA6ULJKT+GeaaTpQ9ecQCuUiKTpqnsyxoJENICrerfJ6+jB5g11YEr6VQJcSNH4tNemt5FAOiuwkgq7Pipre7hq9PRFxYQXZyrFXTHE47UnkB3qIofpcB2ryLvldYYekEBVfVV39nFjgyL+cljBKMQh7haSrPeJPb/4H33rY5CqE4g/UXExwZfPOF2dM45W75Dx9doqMuwBw=" />
 
-        <activity android:name="com.rungo.runwithzippy.presentation.containers.MainContainer" />
-
         <activity
-            android:name="com.rungo.runwithzippy.presentation.features.splash.SplashActivity"
-            android:theme="@style/SplashTheme">
+            android:name=".presentation.containers.MainContainer"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.features.splash.SplashActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".presentation.containers.LoginContainer"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.features.description.DescriptionActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.features.creationTraining.CreationTrainingActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.containers.RunningContainer"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.containers.RunningStatisticsContainer"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.containers.RunningStatisticViewContainer"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.containers.ProfileContainer"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.containers.ShopContainer"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".presentation.containers.LoginContainer" />
+        <activity
+            android:name=".presentation.containers.TrainingContainer"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".presentation.features.description.DescriptionActivity" />
-        <activity android:name=".presentation.features.creationTraining.CreationTrainingActivity" />
-        <activity android:name=".presentation.containers.RunningContainer" />
+        <activity
+            android:name=".presentation.containers.FriendsContainer"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
+
     </application>
 
 </manifest>

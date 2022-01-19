@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:paddingEnd="16dp"
+            android:paddingStart="6dp"
+            app:contentInsetStartWithNavigation="0dp"
+            app:navigationIcon="@drawable/ic_close_black_24dp" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_8ssp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ОСНОВНЫЕ НАСТРОЙКИ" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="0.5"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="Единицы измерения" />
+                    <Switch
+                        android:id="@+id/switchUnitDistance"
+                        android:layout_gravity="right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10ssp"
+                android:orientation="horizontal"
+                android:weightSum="0.5">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="PUSH уведомление" />
+
+                <Switch
+                    android:id="@+id/switchPushNotification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10ssp"
+                android:text="ЛИЧНЫЕ НАСТРОЙКИ" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilSettingTrophyName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Хвалебные слова"
+                app:errorEnabled="true"
+                app:errorTextColor="@color/colorRed">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSettingTrophyName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10ssp"
+                android:text="ПРОЧЕЕ" />
+            <ListView
+                android:id="@+id/rvSettingOther"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

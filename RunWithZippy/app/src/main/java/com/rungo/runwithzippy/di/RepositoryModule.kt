@@ -1,12 +1,8 @@
 package com.rungo.runwithzippy.di
 
-import com.rungo.runwithzippy.data.remote.ApiService
-import com.rungo.runwithzippy.data.repository.AuthRepositoryImpl
-import com.rungo.runwithzippy.data.repository.ChallengeRepositoryImpl
-import com.rungo.runwithzippy.data.repository.TrainingRepositoryImpl
-import com.rungo.runwithzippy.domain.repository.AuthRepository
-import com.rungo.runwithzippy.domain.repository.ChallengeRepository
-import com.rungo.runwithzippy.domain.repository.TrainingRepository
+import com.rungo.runwithzippy.api.ApiService
+import com.rungo.runwithzippy.data.repository.*
+import com.rungo.runwithzippy.domain.repository.*
 import org.koin.dsl.module
 
 val repositoryModule = module {
@@ -14,6 +10,13 @@ val repositoryModule = module {
     single { createAuthRepository(get()) }
     single { createChallengeRepository(get()) }
     single { createTrainingRepository(get())}
+    single { createRegistrationRepository(get())}
+    single { createProfileRepository(get())}
+    single { createInitialConfigRepository(get()) }
+    single { createStatisticAddRepository(get()) }
+    single { createStoreAddRepository(get()) }
+    single { createFriendsRepository(get()) }
+    single { createSendFcmTokenRepository(get()) }
 }
 
 fun createAuthRepository(apiService: ApiService) : AuthRepository{
@@ -26,4 +29,32 @@ fun createChallengeRepository(apiService: ApiService): ChallengeRepository {
 
 fun createTrainingRepository(apiService: ApiService): TrainingRepository {
     return TrainingRepositoryImpl(apiService)
+}
+
+fun createRegistrationRepository(apiService: ApiService): RegistrationRepository {
+    return RegRepositoryImpl(apiService)
+}
+
+fun createProfileRepository(apiService: ApiService): ProfileRepository {
+    return ProfileRepositoryImpl(apiService)
+}
+
+fun createFriendsRepository(apiService: ApiService): FriendsRepository {
+    return FriendsRepositoryImpl(apiService)
+}
+
+fun createInitialConfigRepository(apiService: ApiService): InitialConfigRepository {
+    return InitialConfigRepositoryImpl(apiService)
+}
+
+fun createStatisticAddRepository(apiService: ApiService): StatisticRepository {
+    return StatisticsRepositoryImpl(apiService)
+}
+
+fun createStoreAddRepository(apiService: ApiService): StoreRepository {
+    return StoreRepositoryImpl(apiService)
+}
+
+fun createSendFcmTokenRepository(apiService: ApiService): FcmTokenRepository {
+    return SendFcmTokenRepositoryImpl(apiService)
 }

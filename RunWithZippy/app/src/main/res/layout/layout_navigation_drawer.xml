@@ -6,7 +6,7 @@
     android:layout_height="154dp">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/ivProfile"
+        android:id="@+id/ivMenuProfileAvatar"
         android:layout_width="@dimen/_64sdp"
         android:layout_height="@dimen/_64sdp"
         android:layout_marginStart="16dp"
@@ -18,16 +18,16 @@
         android:id="@+id/tvName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/ivProfile"
+        android:layout_alignTop="@id/ivMenuProfileAvatar"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginTop="16dp"
-        android:layout_toEndOf="@id/ivProfile"
+        android:layout_toEndOf="@id/ivMenuProfileAvatar"
         android:text="@string/profile_title"
         android:textColor="@color/colorBlack"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tvSubtitle"
+        android:id="@+id/tvClickToProfile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvName"

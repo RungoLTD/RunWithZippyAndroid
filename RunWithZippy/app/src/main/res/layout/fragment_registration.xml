@@ -5,93 +5,206 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary">
+        android:background="#ffff">
 
-        <ImageView
-            android:id="@+id/ivLogo"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_60sdp"
-            android:layout_marginTop="@dimen/_32sdp"
-            android:src="@drawable/ic_logo_title" />
-
-        <androidx.cardview.widget.CardView
+        <RelativeLayout
+            android:id="@+id/registration_head_layout"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_above="@id/ivCat"
-            android:layout_below="@id/ivLogo"
-            android:layout_marginStart="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_24sdp"
-            android:layout_marginEnd="@dimen/_12sdp"
-            android:layout_marginBottom="@dimen/_24sdp"
-            app:cardCornerRadius="@dimen/_16sdp">
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/_15ssp"
+            android:paddingTop="@dimen/_15ssp"
+            android:paddingRight="@dimen/_15ssp">
 
             <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:layout_marginEnd="@dimen/_12sdp">
+                android:id="@+id/logo_layout"
+                android:layout_width="@dimen/_52sdp"
+                android:layout_height="@dimen/_52sdp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/corners_splash_logo_layout"
+                android:padding="@dimen/_5sdp">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tilLogin"
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/ivLogo1"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_18sdp"
-                    android:background="@android:color/white"
-                    android:hint="@string/input_login"
-                    app:errorEnabled="true"
-                    app:errorTextColor="@color/colorRed">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etLogin"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:imeOptions="actionNext"
-                        android:inputType="text"
-                        android:paddingLeft="0dp"
-                        android:textSize="@dimen/_12ssp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tilPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tilLogin"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@android:color/white"
-                    android:hint="@string/input_password"
-                    app:errorEnabled="true"
-                    app:errorTextColor="@color/colorRed">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etPassword"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:imeOptions="actionNext"
-                        android:inputType="text"
-                        android:paddingLeft="0dp"
-                        android:textSize="@dimen/_12ssp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <Button
-                    android:id="@+id/btnLogin"
-                    android:layout_width="@dimen/_120sdp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tilPassword"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:text="@string/login"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/_12ssp" />
+                    android:src="@drawable/bg_splash" />
             </RelativeLayout>
-        </androidx.cardview.widget.CardView>
 
-        <ImageView
-            android:id="@+id/ivCat"
+            <LinearLayout
+                android:id="@+id/hello_text_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/logo_layout"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/_15ssp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Добро пожаловать,"
+                    android:textSize="@dimen/_24ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="В семью!"
+                    android:textSize="@dimen/_24ssp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/registration_head_layout"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:background="@android:color/white"
+                android:hint="@string/input_login"
+                app:errorEnabled="true"
+                app:errorTextColor="@color/colorRed">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="0dp"
+                    android:textSize="@dimen/_12ssp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tilLogin"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/bg_button"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="@string/registration"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_10ssp" />
+        </RelativeLayout>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_below="@+id/registration_head_layout"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:hint="Имя"
+                app:errorEnabled="true"
+                app:errorTextColor="@color/colorRed">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLoginUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="0dp"
+                    android:textSize="@dimen/_12ssp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:hint="Как тебя хвалить? (к примеру: Ты молодец!)"
+                app:errorEnabled="true"
+                app:errorTextColor="@color/colorRed">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLoginTrophyName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="0dp"
+                    android:textSize="@dimen/_12ssp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:hint="Как тебя ругать? (к примеру: Ты не молодец) "
+                app:errorEnabled="true"
+                app:errorTextColor="@color/colorRed">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLoginRebukeName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="0dp"
+                    android:textSize="@dimen/_12ssp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:hint="Рост"
+                app:errorEnabled="true"
+                app:errorTextColor="@color/colorRed">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLoginHeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="0dp"
+                    android:textSize="@dimen/_12ssp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:hint="Вес"
+                app:errorEnabled="true"
+                app:errorTextColor="@color/colorRed">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLoginWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="0dp"
+                    android:textSize="@dimen/_12ssp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                android:id="@+id/btnLoginNext"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tilLogin"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_gravity="center"
+                android:text="@string/next"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12ssp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <ProgressBar
+            android:id="@+id/progressBar"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/_70sdp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_login_cat" />
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:visibility="gone" />
     </RelativeLayout>
 </layout>

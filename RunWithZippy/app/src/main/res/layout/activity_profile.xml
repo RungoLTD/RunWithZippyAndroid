@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="0dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:paddingStart="6dp"
+                android:paddingEnd="16dp"
+                app:contentInsetStartWithNavigation="0dp"
+                app:navigationIcon="@drawable/ic_baseline_arrow_back_24" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/rlRun"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/_15ssp"
+                    android:paddingRight="@dimen/_15ssp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/ivProfileAvatar"
+                                android:layout_width="@dimen/_60sdp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                app:shapeAppearanceOverlay="@style/circleImageView" />
+
+                            <TextView
+                                android:id="@+id/tvProfileUsername"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Я"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_15ssp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvProfileUserId"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Ваш ID:"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_15ssp" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/about_me"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_15ssp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/llAboutMe"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="0.9">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.3"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/tilProfileWeight"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/weight"
+                                    app:errorEnabled="true"
+                                    app:errorTextColor="@color/colorRed">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/etProfileWeight"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:inputType="numberDecimal" />
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.3"
+                                android:gravity="center_horizontal">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/tilProfileHeight"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/height"
+                                    app:errorEnabled="true"
+                                    app:errorTextColor="@color/colorRed">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/etProfileHeight"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:inputType="numberDecimal" />
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.3"
+                                android:gravity="center_horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvFinishTempCount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignStart="@id/tvFinishTemp"
+                                    android:layout_alignEnd="@id/tvFinishTemp"
+                                    android:gravity="center_horizontal"
+                                    android:text="ИМТ"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:id="@+id/tvFinishTemp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tvFinishTempCount"
+                                    android:text="ИМТ" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btnProfileSave"
+                            android:layout_width="@dimen/_120sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/llAboutMe"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/_26sdp"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:text="@string/save"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/_12ssp" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/my_training"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_15ssp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/llMyTraining"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="0.9">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.3"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tvMyTrainingTotal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Всего" />
+
+                                <TextView
+                                    android:id="@+id/tvMyTrainingTotalCount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignStart="@id/tvMyTrainingTotal"
+                                    android:layout_alignEnd="@id/tvMyTrainingTotal"
+                                    android:gravity="center_horizontal"
+                                    android:text="1"
+                                    android:textColor="@android:color/black" />
+
+
+                                <TextView
+                                    android:id="@+id/tvMyTrainingTemp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tvFinishDistanceKm"
+                                    android:layout_marginTop="@dimen/_15ssp"
+                                    android:text="Ср. темп" />
+
+                                <TextView
+                                    android:id="@+id/tvMyTrainingTempCount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignStart="@id/tvMyTrainingTemp"
+                                    android:layout_alignEnd="@id/tvMyTrainingTemp"
+                                    android:gravity="center_horizontal"
+                                    android:text="0"
+                                    android:textColor="@android:color/black" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.3"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tvTrainingTotalDistance"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Всего км" />
+
+                                <TextView
+                                    android:id="@+id/tvTrainingTotalDistanceKm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignStart="@id/tvTrainingTotalDistance"
+                                    android:layout_alignEnd="@id/tvTrainingTotalDistance"
+                                    android:gravity="center_horizontal"
+                                    android:text="0"
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:id="@+id/tvMyTrainingSpeed"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tvFinishDistanceKm"
+                                    android:layout_marginTop="@dimen/_15ssp"
+                                    android:text="Ср. скорость" />
+
+                                <TextView
+                                    android:id="@+id/tvMyTrainingSpeedCount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignStart="@id/tvMyTrainingTemp"
+                                    android:layout_alignEnd="@id/tvMyTrainingTemp"
+                                    android:gravity="center_horizontal"
+                                    android:text="0"
+                                    android:textColor="@android:color/black" />
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.3"
+                                android:gravity="center_horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvTrainingTotalCalories"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Сожжено всего" />
+
+                                <TextView
+                                    android:id="@+id/tvTrainingTotalCaloriesCount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tvTrainingTotalCalories"
+                                    android:layout_alignStart="@id/tvTrainingTotalCalories"
+                                    android:layout_alignEnd="@id/tvTrainingTotalCalories"
+                                    android:gravity="center_horizontal"
+                                    android:text="0 Ккал"
+                                    android:textColor="@android:color/black" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </ScrollView>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -27,6 +27,7 @@ class EventData(var eventCode: EventEnums, var eventPayload: Any?)
 
 enum class EventEnums {
     SUCCESS,
+    SUCCESS_LOGIN,
     FAIL,
     OTHER
 }

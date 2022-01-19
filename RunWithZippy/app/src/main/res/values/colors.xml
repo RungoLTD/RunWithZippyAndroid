@@ -5,11 +5,13 @@
     <color name="colorAccent">#FFBB14</color>
 
     <color name="colorRed">#FF3055</color>
+    <color name="colorWhite">#FFF</color>
     <color name="colorGray">#C1C1C1</color>
     <color name="colorGrayMenu">#868686</color>
 
     <color name="colorDarkGray">#84918f</color>
     <color name="colorBlack">#242424</color>
+    <color name="colorGreen">#45CB5A</color>
 
     <color name="colorGrayLight">#F2F2F2</color>
 

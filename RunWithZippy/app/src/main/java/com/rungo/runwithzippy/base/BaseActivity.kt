@@ -22,6 +22,13 @@ abstract class BaseActivity : AppCompatActivity(), AndroidFragmentApplication.Ca
         @LayoutRes resId: Int
     ): Lazy<T> = lazy { DataBindingUtil.setContentView<T>(this, resId) }
 
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        connectionLiveData = ConnectionLiveData(this)
+    }
+
     fun setupEventListener(lifecycleOwner: LifecycleOwner, viewModel: BaseViewModel) {
         viewModel.events.observe(lifecycleOwner, Observer { event ->
             event.getContentIfNotHandled()?.let {
@@ -32,9 +39,4 @@ abstract class BaseActivity : AppCompatActivity(), AndroidFragmentApplication.Ca
     }
 
     open fun onEvent(eventData: EventData) {}
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        connectionLiveData = ConnectionLiveData(this)
-    }
 }

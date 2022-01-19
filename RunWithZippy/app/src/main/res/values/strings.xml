@@ -2,16 +2,23 @@
     <string name="app_name">RunWithZippy</string>
     <string name="api_key">AIzaSyB9LimEtpbZfBAvzyVbzjaqz_z_vpDW7Xc</string>
     <string name="client_id">1017242248802-t9aga5jeauaslhlam2f25f6bh2mn3mj8.apps.googleusercontent.com</string>
+    <string name="facebook_app_id">1318187738350814</string>
+    <string name="fb_login_protocol_scheme">fb1318187738350814</string>
 
     <string name="sign_up_license">Нажимая на кнопку \"Войти\", вы принимаете условия пользовательского соглашения и политику конфиденциальности.</string>
     <string name="sign_up">Зарегистрироваться</string>
 
-    <string name="input_login">Логин</string>
+    <string name="input_login">Email</string>
     <string name="input_password">Пароль</string>
     <string name="login">Войти</string>
+    <string name="registration">Регистрация</string>
     <string name="login_title">Вход</string>
     <string name="forget_password">Забыли пароль?</string>
     <string name="start">Старт</string>
+
+    <string name="location_permission_denied">This sample requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Google Maps API Demos\'.</string>
+    <string name="permission_required_toast">Location permission is required for this demo.</string>
+    <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
 
     <!--Menu navigation drawer-->
     <string name="menu_running">Бег</string>
@@ -62,7 +69,7 @@
     <string name="skip_message">Вы действительно хотите пропустить разминку?</string>
     <string name="turn_on_geolocation">Для того чтобы начать тренировку нужно включить доступ к геолокации</string>
     <string name="map_error">Не удалось инициализировать карту</string>
-    
+
     <string name="buying_title">Программа бега, созданная для тебя. Начни бегать вместе с нами!</string>
     <string name="buying_select">Выберите программу</string>
 
@@ -78,4 +85,14 @@
 
     <string name="profile_subtitle">Перейти в профиль</string>
     <string name="profile_title">Ваше имя</string>
+    <string name="save">Сохранить</string>
+    <string name="training_name">Название тренировки</string>
+    <string name="height">Рост</string>
+    <string name="weight">Вес</string>
+    <string name="about_me">Обо мне</string>
+    <string name="my_training">Мои тренировки</string>
+    <string name="no_friends">У Вас нет друзей</string>
+    <string name="next">Далее</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

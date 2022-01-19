@@ -14,6 +14,7 @@ import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication
 import com.rungo.runwithzippy.R
 import com.rungo.runwithzippy.databinding.FragmentWarmUpBinding
+import com.rungo.runwithzippy.utils.AnimationEnum
 import com.rungo.runwithzippy.utils.animationModel.Zippy
 import com.rungo.runwithzippy.utils.extensions.dip2px
 import com.rungo.runwithzippy.utils.extensions.getScreenWidth
@@ -62,7 +63,7 @@ class WarmUpFragment : AndroidFragmentApplication() {
 
     private fun setupZippy() {
         cfg.r = 8.also { cfg.a = it }.also { cfg.b = it }.also { cfg.g = it }
-        zippy = Zippy(requireContext(), 0.4f, (getScreenWidth(requireContext()) / 3).toFloat(), 0.0f)
+        zippy = Zippy(requireContext(), 0.4f, (getScreenWidth(requireContext()) / 3).toFloat(), 0.0f, AnimationEnum.HI.animationName)
 
         if (zippyView == null) {
             zippyView = initializeForView(zippy, cfg)

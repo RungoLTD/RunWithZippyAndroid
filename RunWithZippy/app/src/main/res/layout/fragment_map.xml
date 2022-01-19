@@ -12,7 +12,7 @@
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/_36ssp"
             android:layout_centerInParent="true"
-            android:text="FUCKING WORLD"/>
+            android:text="MAPS"/>
 
     </RelativeLayout>
 </layout>

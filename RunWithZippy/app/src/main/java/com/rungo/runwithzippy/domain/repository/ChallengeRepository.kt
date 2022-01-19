@@ -1,7 +1,6 @@
 package com.rungo.runwithzippy.domain.repository
 
 import com.rungo.runwithzippy.data.model.ChallengeResponse
-import com.rungo.runwithzippy.data.model.AccessToken
 import com.rungo.runwithzippy.data.model.AccessTokenParam
 
 interface ChallengeRepository {

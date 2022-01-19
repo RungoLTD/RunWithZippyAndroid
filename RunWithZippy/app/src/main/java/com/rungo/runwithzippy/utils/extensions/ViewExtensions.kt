@@ -1,5 +1,6 @@
 package com.rungo.runwithzippy.utils.extensions
 
+import android.app.AlertDialog
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast

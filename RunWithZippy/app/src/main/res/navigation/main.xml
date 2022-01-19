@@ -17,4 +17,12 @@
         android:id="@+id/navigation_training"
         android:name="com.rungo.runwithzippy.presentation.containers.ContainerTrainingFragment" />
 
+    <keep_state_fragment
+        android:id="@+id/navigation_shop"
+        android:name="com.rungo.runwithzippy.presentation.containers.ContainerShopFragment" />
+
+    <keep_state_fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.rungo.runwithzippy.presentation.containers.ContainerProfileFragment" />
+
 </navigation>

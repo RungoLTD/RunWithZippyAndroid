@@ -16,14 +16,14 @@
                 android:id="@+id/rlMap"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_200sdp"
-                android:visibility="gone"
-                android:animateLayoutChanges="true">
+                android:animateLayoutChanges="true"
+                android:visibility="gone">
 
                 <fragment
-                    class="com.here.android.mpa.mapping.AndroidXMapFragment"
-                    android:id="@+id/mapFragment"
+                    android:id="@+id/mapGoogleFragment"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent" />
 
             </RelativeLayout>
 
@@ -126,9 +126,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/_20sdp"
                     android:orientation="horizontal"
                     android:visibility="gone"
-                    android:layout_marginBottom="@dimen/_20sdp"
                     android:weightSum="1">
 
                     <ImageView
@@ -147,10 +147,10 @@
                         android:id="@+id/ivPlay"
                         android:layout_width="@dimen/_100sdp"
                         android:layout_height="@dimen/_100sdp"
+                        android:layout_weight="0.5"
                         android:background="?android:attr/actionBarItemBackground"
                         android:clickable="true"
                         android:focusable="true"
-                        android:layout_weight="0.5"
                         android:src="@drawable/ic_play"
                         app:tint="@color/colorBlack" />
 
@@ -203,7 +203,6 @@
                         app:tint="@color/colorBlack" />
 
                 </RelativeLayout>
-
             </RelativeLayout>
         </LinearLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

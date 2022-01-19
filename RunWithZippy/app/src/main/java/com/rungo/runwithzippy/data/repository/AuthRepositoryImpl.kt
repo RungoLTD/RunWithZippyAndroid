@@ -1,10 +1,10 @@
 package com.rungo.runwithzippy.data.repository
 
+import com.rungo.runwithzippy.api.ApiService
 import com.rungo.runwithzippy.data.model.AuthResponse
 import com.rungo.runwithzippy.data.model.AuthWithEmail
 import com.rungo.runwithzippy.data.model.AuthWithFacebook
 import com.rungo.runwithzippy.data.model.AuthWithGoogle
-import com.rungo.runwithzippy.data.remote.*
 import com.rungo.runwithzippy.domain.repository.AuthRepository
 
 class AuthRepositoryImpl(private val apiService: ApiService) : AuthRepository {

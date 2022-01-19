@@ -1,7 +1,7 @@
 package com.rungo.runwithzippy.di
 
 import com.rungo.runwithzippy.data.remote.ApiErrorHandle
-import com.rungo.runwithzippy.data.remote.ApiService
+import com.rungo.runwithzippy.api.ApiService
 import com.rungo.runwithzippy.data.remote.RequestInterceptor
 import com.rungo.runwithzippy.utils.Constants
 import okhttp3.OkHttpClient

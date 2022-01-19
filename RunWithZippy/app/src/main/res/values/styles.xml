@@ -33,6 +33,27 @@
         <item name="cornerSize">@dimen/_12sdp</item>
     </style>
 
+    <style name="DialogTheme" parent="AppTheme">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="ItemList" parent="Widget.AppCompat.ListView">
+        <!--<item name="background">@color/background</item>-->
+        <item name="android:divider">@color/colorGray</item>
+        <item name="android:dividerHeight">1dp</item>
+        <!--<item name="android:listSelector">@drawable/actionbar_background_green</item>-->
+        <!--<item name="android:drawSelectorOnTop">false</item>-->
+        <!--<item name="android:cacheColorHint">#00000000</item>-->
+    </style>
+
+    <style name="ItemList.Item">
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+    </style>
+
     <style name="ButtonStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

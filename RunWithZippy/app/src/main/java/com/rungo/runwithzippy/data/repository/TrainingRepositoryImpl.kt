@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import com.rungo.runwithzippy.data.model.AccessTokenParam
 import com.rungo.runwithzippy.data.model.Training
 import com.rungo.runwithzippy.data.model.TrainingResponse
-import com.rungo.runwithzippy.data.remote.ApiService
+import com.rungo.runwithzippy.api.ApiService
 import com.rungo.runwithzippy.domain.repository.TrainingRepository
 
 class TrainingRepositoryImpl(private val apiService: ApiService) : TrainingRepository {

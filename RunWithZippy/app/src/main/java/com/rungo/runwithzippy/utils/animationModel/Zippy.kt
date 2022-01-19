@@ -11,7 +11,7 @@ import com.esotericsoftware.spine.*
 import com.rungo.runwithzippy.utils.AnimationEnum
 import com.rungo.runwithzippy.utils.extensions.getScreenWidth
 
-class Zippy(private val context: Context, private val size: Float, private val positionX: Float, private val positionY: Float) : ApplicationAdapter() {
+class Zippy(private val context: Context, private val size: Float, private val positionX: Float, private val positionY: Float, private val animationName: String) : ApplicationAdapter() {
 
     private val camera: OrthographicCamera by lazy { OrthographicCamera() }
     private val batch: PolygonSpriteBatch by lazy { PolygonSpriteBatch() }
@@ -42,7 +42,7 @@ class Zippy(private val context: Context, private val size: Float, private val p
         state = AnimationState(stateData) // Holds the animation state for a skeleton (current animation, time, etc).
         state?.timeScale = 1.0f // Slow all animations down to 50% speed.
 
-        state?.setAnimation(0, "03_hi", true)
+        state?.setAnimation(0, animationName, true)
     }
 
     override fun render() {
@@ -70,6 +70,6 @@ class Zippy(private val context: Context, private val size: Float, private val p
 
     fun setAnimate(animate: String) {
         state?.setAnimation(0, animate, false)
-        state?.addAnimation(0, "03_hi", true, 1f)
+        state?.addAnimation(0, animationName, true, 1f)
     }
 }

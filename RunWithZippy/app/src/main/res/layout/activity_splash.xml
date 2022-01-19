@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFBB14">
+
+        <RelativeLayout
+            android:id="@+id/main_splash_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:id="@+id/ivLogo"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_120sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/bg_splash" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:src="@drawable/splash_title_zippy" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/no_auth_splash_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:paddingLeft="@dimen/_15ssp"
+                android:paddingTop="@dimen/_15ssp"
+                android:id="@+id/splash_head_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:padding="@dimen/_5sdp"
+                    android:id="@+id/logo_layout"
+                    android:layout_width="@dimen/_52sdp"
+                    android:layout_height="@dimen/_52sdp"
+                    android:background="@drawable/corners_splash_logo_layout">
+
+                    <ImageView
+                        android:id="@+id/ivLogo1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/bg_splash" />
+                </RelativeLayout>
+                <LinearLayout
+                    android:paddingTop="@dimen/_15ssp"
+                    android:layout_below="@+id/logo_layout"
+                    android:id="@+id/hello_text_layout"
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ffff"
+                        android:textSize="@dimen/_24ssp"
+                        android:text="Привет,"/>
+                    <TextView
+                        android:id="@+id/hello_text_changed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_24ssp"
+                        android:textColor="#ffff"
+                        android:text="спортик"/>
+                </LinearLayout>
+            </RelativeLayout>
+            <LinearLayout
+                android:paddingTop="@dimen/_15ssp"
+                android:layout_below="@+id/splash_head_layout"
+                android:id="@+id/auth_btn_layout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/splash_sign_in_btn"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_26sdp"
+                    android:backgroundTint="@android:color/white"
+                    android:text="@string/login"
+                    android:background="@drawable/bg_button"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_10ssp" />
+
+                <Button
+                    android:id="@+id/splash_sign_up_btn"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_26sdp"
+                    android:background="@drawable/bg_button"
+                    android:backgroundTint="@android:color/white"
+                    android:text="Регистрация"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_10ssp" />
+    <!--                <Button-->
+    <!--                    android:layout_marginTop="@dimen/_15ssp"-->
+    <!--                    android:id="@+id/splash_sign_up_btn"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:textSize="@dimen/_12ssp"-->
+    <!--                    android:background="@drawable/corners_splash_logo_layout"-->
+    <!--                    android:layout_gravity="center_horizontal"-->
+    <!--                    android:textStyle="bold"-->
+    <!--                    android:textColor="#FFBB14"-->
+    <!--                    android:text="Регистрация"/>-->
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

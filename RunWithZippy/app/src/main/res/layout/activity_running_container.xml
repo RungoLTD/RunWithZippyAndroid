@@ -12,7 +12,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:keepScreenOn="true"
-            app:navGraph="@navigation/running"
+            app:navGraph="@navigation/main"
             app:defaultNavHost="true" />
 
         <include
