@@ -16,6 +16,12 @@ data class SkinRequest(
     val skinIdentifier: String
 )
 
+data class PaymentRequest(
+    val accessToken: String,
+    val paymentIdentifier: String,
+    val transactionId: String
+)
+
 data class SkinResponse(
     val success: String,
     val error: String,

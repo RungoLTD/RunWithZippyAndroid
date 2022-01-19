@@ -30,7 +30,7 @@ val viewModelModule = module {
     viewModel { CreationTrainingViewModel(get()) }
     viewModel { RunningViewModel(get(), get(), get(), get(), get(), get()) }
     viewModel { MainViewModel(get(), get()) }
-    viewModel { ShopViewModel(get(), get(), get(), get()) }
+    viewModel { ShopViewModel(get(), get(), get(), get(), get()) }
     viewModel { FriendsViewModel(get(), get()) }
 
 }

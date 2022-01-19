@@ -17,5 +17,9 @@ class StoreRepositoryImpl(private val apiService: ApiService): StoreRepository {
     override suspend fun applySkin(skinRequest: SkinRequest): SkinResponse {
         return apiService.applySkin(skinRequest)
     }
-    
+
+    override suspend fun payment(paymentRequest: PaymentRequest): SkinResponse {
+        return apiService.payment(paymentRequest)
+    }
+
 }

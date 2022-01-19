@@ -8,7 +8,7 @@ import com.rungo.runwithzippy.domain.repository.ProfileRepository
 class FriendsRepositoryImpl(private val apiService: ApiService): FriendsRepository {
 
     override suspend fun getFriendsList(accessToken: AccessTokenParam): FriendsResponse {
-        return apiService.friends_list(accessToken)
+        return apiService.friendsList(accessToken)
     }
 
 //    override suspend fun getProfileStatistics(accessToken: AccessTokenParam): ProfileStatisticsResponse {

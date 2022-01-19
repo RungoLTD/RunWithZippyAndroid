@@ -108,11 +108,11 @@ interface ApiService {
 
     @POST("store/payment")
     suspend fun payment(
-        @Body skinRequest: SkinRequest
+        @Body skinRequest: PaymentRequest
     ): SkinResponse
 
     @POST("friends/list")
-    suspend fun friends_list(
+    suspend fun friendsList(
         @Body accessTokenParam: AccessTokenParam
     ): FriendsResponse
 

@@ -25,6 +25,12 @@ object Constants {
         "CRYPTOGRAM_3DS")
     const val COUNTRY_CODE = "RU"
     const val CURRENCY_CODE = "RUB"
+
+    const val PAYMENT_TYPE_1200_COINS = "com.myrungo.ios.app.1200.coins"
+    const val PAYMENT_TYPE_500_COINS = "com.myrungo.ios.app.500.coins"
+    const val PAYMENT_TYPE_80_COINS = "com.myrungo.ios.app.80.coins"
+    const val PAYMENT_TYPE_ADS = "ads"
+
     /**
      * Supported countries for shipping (use ISO 3166-1 alpha-2 country codes). Relevant only when
      * requesting a shipping address.

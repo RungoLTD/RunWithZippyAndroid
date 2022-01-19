@@ -7,6 +7,7 @@ import com.rungo.runwithzippy.domain.usecase.auth.AuthWithGoogleUseCase
 import com.rungo.runwithzippy.domain.usecase.friends.GetFriendsUseCase
 import com.rungo.runwithzippy.domain.usecase.registration.RegistrationWithEmailUseCase
 import com.rungo.runwithzippy.domain.usecase.running_statistic.*
+import com.rungo.runwithzippy.domain.usecase.store.*
 import org.koin.dsl.module
 
 val useCaseModule = module {
@@ -50,4 +51,6 @@ val useCaseModule = module {
     single { StoreGetSkinsUseCase(get(), get()) }
 
     single { StoreApplySkinUseCase(get(), get()) }
+
+    single { StorePaymentUseCase(get(), get()) }
 }

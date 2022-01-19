@@ -25,11 +25,13 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.wallet.*
 import com.rungo.runwithzippy.R
 import com.rungo.runwithzippy.base.BaseFragment
+import com.rungo.runwithzippy.data.model.PaymentRequest
 import com.rungo.runwithzippy.data.model.SkinRequest
 import com.rungo.runwithzippy.data.model.Skins
 import com.rungo.runwithzippy.databinding.ShopFragmentBinding
 import com.rungo.runwithzippy.domain.adapters.ZippySkinsAdapter
 import com.rungo.runwithzippy.presentation.features.config.InitialConfigModel
+import com.rungo.runwithzippy.utils.Constants
 import com.rungo.runwithzippy.utils.EventData
 import com.rungo.runwithzippy.utils.EventEnums
 import com.rungo.runwithzippy.utils.extensions.isNetworkAvailable
@@ -82,7 +84,7 @@ class ShopFragment : BaseFragment(), (View, Skins) -> Unit {
         //ca-app-pub-2530294564111476/3573554280
         RewardedAd.load(
             requireContext(),
-            "ca-app-pub-5203994867346463/7824364216",
+            "ca-app-pub-3940256099942544/5224354917",
             adRequest,
             object : RewardedAdLoadCallback() {
                 override fun onAdFailedToLoad(adError: LoadAdError) {
@@ -183,6 +185,7 @@ class ShopFragment : BaseFragment(), (View, Skins) -> Unit {
                     }
                     override fun onUserEarnedReward(@NonNull reward: RewardItem) {
                         println("User посмотрел рекламу.")
+                        viewModel.payment(PaymentRequest(access_token, Constants.PAYMENT_TYPE_ADS, ""))
                         // User earned reward.
                     }
                     override fun onRewardedAdFailedToShow(adError: AdError) {

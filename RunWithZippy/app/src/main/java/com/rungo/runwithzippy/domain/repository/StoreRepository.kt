@@ -9,5 +9,7 @@ interface StoreRepository {
 
     suspend fun applySkin(skinRequest: SkinRequest): SkinResponse
 
+    suspend fun payment(skinRequest: PaymentRequest): SkinResponse
+
     //, meters: RunningRequest, time: RunningRequest, maxSpeed: RunningRequest, avgSpeed: RunningRequest, avgPace: RunningRequest, routes: RunningRequest, paces: RunningRequest
 }

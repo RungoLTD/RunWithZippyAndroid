@@ -1,4 +1,4 @@
-package com.rungo.runwithzippy.domain.usecase
+package com.rungo.runwithzippy.domain.usecase.store
 
 import androidx.lifecycle.MutableLiveData
 import com.rungo.runwithzippy.base.BaseUseCase
