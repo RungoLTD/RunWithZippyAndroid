@@ -7,52 +7,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:943853159779:android:92dd742f8d6339975a3f56",
-        "android_client_info": {
-          "package_name": "Run.with.Zippy"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "943853159779-f3b5meddqjcridsh6uo7vpl2mlhniuc4.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "Run.with.Zippy",
-            "certificate_hash": "3bace823f3a67ace2165ada77c379319d860003f"
-          }
-        },
-        {
-          "client_id": "943853159779-8ql3ru85d247pdbplfdh45u28a8ndp8n.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDGEnJHXzgi6UXlD4NoIR9El_dIcEHQJ-0"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "943853159779-8ql3ru85d247pdbplfdh45u28a8ndp8n.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "943853159779-91dikf10mbp7lnhtghvpcmkj2u4js0i4.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "Run.with.Zippy",
-                "app_store_id": "1468211687"
-              }
-            }
-          ]
-        }
-      },
-      "admob_app_id": "ca-app-pub-5203994867346463~5741231242"
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:943853159779:android:846614c7ef744cc25a3f56",
         "android_client_info": {
           "package_name": "com.rungo.runwithzippy"
@@ -85,11 +39,10 @@
               "client_type": 3
             },
             {
-              "client_id": "943853159779-91dikf10mbp7lnhtghvpcmkj2u4js0i4.apps.googleusercontent.com",
+              "client_id": "943853159779-3a5bgcmddo6lhauhmj7pag8pj7nrmfke.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "Run.with.Zippy",
-                "app_store_id": "1468211687"
+                "bundle_id": "com.myrungo.ios-app1"
               }
             }
           ]

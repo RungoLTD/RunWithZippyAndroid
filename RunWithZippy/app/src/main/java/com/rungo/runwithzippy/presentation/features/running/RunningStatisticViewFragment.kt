@@ -98,7 +98,7 @@ class RunningStatisticViewFragment : BaseFragment(), OnMapReadyCallback {
                 binding.tvRunningStatAvgSpeed.text = "" + viewModel.get_statistic.value!!.avgSpeed
                 binding.tvRunningStatStep.text = "" + viewModel.get_statistic.value!!.paces
 
-                if (viewModel.get_statistic.value!!.routes!!.size > 0) {
+                if (viewModel.get_statistic.value!!.routes != null) {
                     val options = PolylineOptions().color(Color.RED).geodesic(true)
                     for (i in 0..viewModel.get_statistic.value!!.routes!!.size - 1) {
                         options.add(

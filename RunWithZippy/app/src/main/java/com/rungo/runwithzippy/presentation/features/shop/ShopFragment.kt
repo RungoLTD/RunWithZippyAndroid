@@ -84,7 +84,7 @@ class ShopFragment : BaseFragment(), (View, Skins) -> Unit {
         //ca-app-pub-2530294564111476/3573554280
         RewardedAd.load(
             requireContext(),
-            "ca-app-pub-3940256099942544/5224354917",
+            "ca-app-pub-5203994867346463/1056925637",
             adRequest,
             object : RewardedAdLoadCallback() {
                 override fun onAdFailedToLoad(adError: LoadAdError) {

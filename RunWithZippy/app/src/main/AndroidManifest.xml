@@ -43,12 +43,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-2530294564111476~9940352785" />
-        <!--   ca-app-pub-2530294564111476~9940352785
-        ca-app-pub-2530294564111476~9940352785
-         ca-app-pub-2530294564111476/3573554280
-         -->
-
+            android:value="ca-app-pub-5203994867346463~3114266858" />
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
@@ -88,7 +83,7 @@
         <!-- android:value="AIzaSyBa8EnQsTiST98v_xGsqpX54oPrtzdgYy8" /> -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDGEnJHXzgi6UXlD4NoIR9El_dIcEHQJ-0" />
+            android:value="AIzaSyD3JevbFvqOJ2UW_CTjdAIkAgdewLzpkZs" />
         <meta-data
             android:name="com.here.android.maps.appid"
             android:value="DKjBz3QswTOJO8pCeu9u" />
